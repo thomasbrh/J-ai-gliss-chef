@@ -1,0 +1,38 @@
+/* Grid */
+.grid {
+    box-sizing: border-box;
+    padding: 0 0px;
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-column-gap: 1em;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+}
+
+
+/* Placement grid */
+.grid > * {
+    grid-column: 2/-1;
+}
+
+.grid--full > * {
+    grid-column: 1/6;
+}
+
+.grid-start1 {
+    grid-column-start: 1;
+}  
+.grid-start2 {
+    grid-column-start: 2;
+}
+.grid-start3 {
+    grid-column-start: 3;
+}
+
+.grid-end4 {
+    grid-column-end: 4;
+}
+.grid-end5 {
+    grid-column-end: 5;
+}

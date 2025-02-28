@@ -1,0 +1,20 @@
+/* Global style */
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    display: grid;
+    margin: 0;
+}
+
+header, 
+footer {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+}

@@ -1,0 +1,22 @@
+// Import des fichiers utilitaires (variables, mixins, functions…)
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/functions";
+
+// Import des styles de base
+@import "components/typography"; 
+
+// Import des mises en page (grilles, sections…)
+@import "layout/global";
+@import "layout/navigation";
+@import "layout/grids";
+
+/* ChatGPT a été utilisé pour de l'optimisation */
+
+/* Img */
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
