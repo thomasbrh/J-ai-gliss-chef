@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
-        <!-- Meta Partage -->
+        <!-- meta Partage -->
         <meta property="og:site_name" content="DataPlay - Titanic" >
         <meta property="og:title" content="DataPlay" >
         <meta property="og:description" content="DataPlay sur le thème du Titanic" >
@@ -15,16 +15,53 @@
         <meta property="og:image" content="assets/images/">
         <meta property="og:image:width" content="1800">
         <meta property="og:image:height" content="945">
-        <!-- Link -->
+        <!-- link -->
         <link rel="icon" type="image/x-icon" href="assets/images/">
         <link rel="stylesheet" href="styles/app.css">
         <script src="scripts/app.js" defer></script>
-        <!-- Link Typos -->
+        <!-- link Typos -->
         
     </head>
 
     <body> 
         <h1 class="title-big">DataPlay</h1>
         <p class="paragraph-default">DataPlay</p>
+
+        <header>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </header>
+    
+        <form id="userForm">
+            <h2>Blue star line</h2>
+    
+            <p>Ticket #1234</p>
+    
+            <label for="prenom nom">Prénom nom :</label>
+            <input type="text" id="prenom nom" placeholder="Votre prénom et nom">
+    
+            <label for="sexe">Sexe :</label>
+            <select id="sexe">
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+            </select>
+    
+            <label for="age">Age :</label>
+            <input type="number" id="age" placeholder="Entrez votre age">
+    
+            <label for="classe">Classe de transport :</label>
+            <select id="classe">
+                <option value="1">1ère classe</option>
+                <option value="2">2ème classe</option>
+                <option value="3">3ème classe</option>
+            </select>
+    
+            <button type="submit">Enregistrer</button>
+        </form>
+    
+        <div class="result" id="result"></div>
     </body>
 </html>

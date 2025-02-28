@@ -1,4 +1,4 @@
-/* Grid */
+/* grid */
 .grid {
     box-sizing: border-box;
     padding: 0 0px;
@@ -11,7 +11,7 @@
 }
 
 
-/* Placement grid */
+/* placement grid */
 .grid > * {
     grid-column: 2/-1;
 }

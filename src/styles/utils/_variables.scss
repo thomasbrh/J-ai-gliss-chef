@@ -1,10 +1,10 @@
 :root {
-    /* Fonts */
+    /* fonts */
     $font-primary: 'Inter', sans-serif;
     $font-secondary: 'Inter', sans-serif;
     $size-text: 16px;
 
-    /* Couleurs */
+    /* couleurs */
     $color-bg: #fff;
     $color-white: #fff;
     $color-black: #000;
@@ -16,14 +16,14 @@
 }
 
 
-@media (min-width: 768px) { /* Tablette (768px et plus) */
+@media (min-width: 768px) { /* tablette (768px et plus) */
     :root {
         --size-text: 18px;
     }
 }
 
 
-@media (min-width: 1280px) { /* Desktop (1280px et plus) */
+@media (min-width: 1280px) { /* desktop (1280px et plus) */
     :root {
         --size-text: 21px;
     }

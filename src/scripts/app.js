@@ -1,6 +1,52 @@
 'use strict';
+/* chatGPT a été utilisé pour la création de ces scripts */
 
-/* ChatGPT a été utilisé pour la création de ces scripts */
+/* form */
+document.addEventListener("DOMContentLoaded", function() {
+    // sélection du formulaire et des éléments
+    const form = document.getElementById("userForm");
+    const resultDiv = document.getElementById("result");
+
+    // écoute de la soumission du formulaire
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+
+        // récupération des valeurs
+        let sexe = document.getElementById("sexe").value;
+        let age = document.getElementById("age").value;
+        let classe = document.getElementById("classe").value;
+
+        // création d'un objet utilisateur
+        let utilisateur = {
+            sexe: sexe,
+            age: age,
+            classe: classe
+        };
+
+        // stocker les données dans le localStorage
+        localStorage.setItem("utilisateur", JSON.stringify(utilisateur));
+
+        // afficher les données enregistrées
+        afficherUtilisateur();
+    });
+
+    // fonction pour afficher les données sauvegardées
+    function afficherUtilisateur() {
+        let data = localStorage.getItem("utilisateur");
+        if (data) {
+            let utilisateur = JSON.parse(data);
+            resultDiv.innerHTML = `
+                <h3>Informations enregistrées :</h3>
+                <p><strong>Sexe :</strong> ${utilisateur.sexe}</p>
+                <p><strong>Age :</strong> ${utilisateur.age}</p>
+                <p><strong>Classe de transport :</strong> ${utilisateur.classe}</p>
+            `;
+        }
+    }
+
+    // charger les données sauvegardées au chargement de la page
+    afficherUtilisateur();
+});
 
 
 
@@ -10,9 +56,7 @@
 
 
 
-
-
-/* Utilitaires */
+/* utilitaires */
 // Function getRandom
 /*
 function getRandomIntInclusive(min, max) {
