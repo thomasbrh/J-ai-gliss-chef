@@ -12,33 +12,33 @@
         <meta property="og:description" content="DataPlay sur le thème du Titanic" >
         <meta property="og:type" content="website">
         <meta property="og:url" content="DataPlay.thomasbruch.be">
-        <meta property="og:image" content="assets/images/">
+        <meta property="og:image" content="assets/images/Logo.svg">
         <meta property="og:image:width" content="1800">
         <meta property="og:image:height" content="945">
         <!-- link -->
-        <link rel="icon" type="image/x-icon" href="assets/images/">
+        <link rel="icon" type="image/x-icon" href="assets/images/Icberg.svg">
         <link rel="stylesheet" href="styles/app.css">
         <script src="scripts/app.js" defer></script>
         <!-- link Typos -->
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap" rel="stylesheet">
     </head>
 
     <body> 
         <header>
-            <h1 class="title-big">DataPlay</h1>
-            <div class=""></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <h1 class="title-big">Réservez votre ticket pour le Titanic !</h1>
+            <img src="assets/images/illustration_titanic.svg" alt="Illustraion esthétique du Titanic en trait bleu">
         </header>
     
         <form id="userForm">
             <h2>Blue star line</h2>
+            <img src="assets/images/Logo.svg" class="logo" alt="logo de blue star line">
     
             <p>Ticket #635</p>
+            <p>Départ 10 Avril 1912</p>
     
-            <label for="prenom nom">Prénom nom :</label>
+            <label for="prenom nom">Prénom et nom :</label>
             <input type="text" id="prenom nom" placeholder="Votre prénom et nom">
     
             <label for="sexe">Sexe :</label>
@@ -57,9 +57,17 @@
                 <option value="3">3ème classe</option>
             </select>
     
+            <p>Destination : New York</p>
             <button type="submit">Enregistrer</button>
         </form>
     
+        <img src="assets/images/Plan_3-4-01.svg" alt="Partie 1 du schéma du Titanic">
+        <img src="assets/images/Plan_3-4-02.svg" alt="Partie 2 du schéma du Titanic">
+        <img src="assets/images/Plan_3-4-03.svg" alt="Partie 3 du schéma du Titanic">
+        <img src="assets/images/Plan_3-4-04.svg" alt="Partie 4 du schéma du Titanic">
+        <img src="assets/images/Plan_3-4-05.svg" alt="Partie 5 du schéma du Titanic">
+
+
         <div class="result" id="result"></div>
     </body>
 </html>
