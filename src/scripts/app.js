@@ -1,6 +1,22 @@
 'use strict';
 /* chatGPT a été utilisé pour la création de ces scripts */
 
+/* Chargement des données JSON dès le début */
+let titanicData = [];
+fetch("assets/data/data.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Erreur de chargement du fichier JSON");
+        }
+        return response.json();
+    })
+    .then(data => {
+        titanicData = data;
+    })
+    .catch(error => {
+        console.error("Erreur lors du chargement des données", error);
+    });
+
 /* form */
 document.addEventListener("DOMContentLoaded", function() {
     // sélection du formulaire et des éléments
@@ -13,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // récupération des valeurs
         let sexe = document.getElementById("sexe").value;
-        let age = document.getElementById("age").value;
-        let classe = document.getElementById("classe").value;
+        let age = parseFloat(document.getElementById("age").value);
+        let classe = parseInt(document.getElementById("classe").value);
 
         // création d'un objet utilisateur
         let utilisateur = {
@@ -28,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // afficher les données enregistrées
         afficherUtilisateur();
+        calculerSurvie(utilisateur);
     });
 
     // fonction pour afficher les données sauvegardées
@@ -46,67 +63,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // charger les données sauvegardées au chargement de la page
     afficherUtilisateur();
-});
 
+    // Fonction pour calculer les chances de survie
+    function calculerSurvie(utilisateur) {
+        // Vérifier si les données sont chargées
+        if (titanicData.length === 0) {
+            resultDiv.innerHTML += `<p><strong>Erreur :</strong> Données non chargées</p>`;
+            return;
+        }
 
+        // Filtrer les données en fonction des critères utilisateur
+        let correspondances = titanicData.filter(passager =>
+            passager.Sex === (utilisateur.sexe === "Homme" ? "male" : "female") &&
+            passager.Pclass === utilisateur.classe &&
+            passager.Age !== null &&
+            Math.abs(passager.Age - utilisateur.age) <= 5
+        );
 
-
-
-
-
-
-
-/* utilitaires */
-// Function getRandom
-/*
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-*/
-
-// fetch sans variable
-/*
-fetch('assets/data/file.txt')
-    .then(function (response) {
-        // code
-        console.log(response);
-        return response.text();
-    })
-    .then(function (data) {
-        console.log(data);
-    })
-    .catch(function () {
-        console.log('erroooorrr');
-    });
-*/
-
-// Déclaration globale de l'index pour pouvoir le modifier partout
-/* let index = 0;
-
-// Fonction pour afficher le bon slide et ajuster la hauteur
-function showSlide(i) {
-    const slides = document.querySelectorAll(".slide");
-    const sliderContainer = document.querySelector(".slider-container");
-
-    if (slides.length > 0) {
-        slides.forEach((slide, index) => {
-            slide.classList.remove("active");
-            slide.style.opacity = "0"; // Cache tous les slides
-            slide.style.zIndex = "0"; // Assure que les slides cachés passent en arrière-plan
-            slide.style.display = "none"; // Évite les erreurs d'affichage
-        });
-
-        slides[i].classList.add("active");
-        slides[i].style.opacity = "1"; // Affiche le slide actif
-        slides[i].style.zIndex = "10"; // Le met au premier plan
-        slides[i].style.display = "block"; // Le rend visible
-
-        // Mise à jour de la hauteur du conteneur
-        if (sliderContainer) {
-            sliderContainer.style.height = `${slides[i].offsetHeight}px`;
+        // Calcul du taux de survie
+        if (correspondances.length > 0) {
+            let survivants = correspondances.filter(p => p.Survived === 1).length;
+            let tauxSurvie = (survivants / correspondances.length) * 100;
+            resultDiv.innerHTML += `<p><strong>Chances de survie :</strong> ${tauxSurvie.toFixed(2)}%</p>`;
+        } else {
+            resultDiv.innerHTML += `<p><strong>Chances de survie :</strong> Données insuffisantes</p>`;
         }
     }
-}
-*/
+});
