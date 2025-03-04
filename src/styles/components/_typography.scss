@@ -1,6 +1,6 @@
 /* typographies */
 h1, h2, h3, h4, h5, h6, p {
-    color: $color-text;
+    color: $color-primary;
     margin: 0;
 }
 
@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p {
 .title-section,  
 .title-footer {
     font-family: $font-primary;
-    line-height: 1.25;
+    line-height: 1;
 }
 
 .title-big {
@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .title-section {
-    font-size: 0px;
+    font-size: 36px;
 }
 
 .title-footer {
@@ -29,6 +29,9 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.6;
     margin-bottom: 4em;
     max-width: 85ch;
+}
+.paragraph--footer {
+    color: $color-white;
 }
 
 .paragraph-footer {

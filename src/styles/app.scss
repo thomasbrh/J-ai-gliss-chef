@@ -23,17 +23,24 @@ img {
     margin: 0;
 }
 
+.img--header {
+    opacity: 0.75;
+    height: 75dvh;
+}
+
 .logo {
     width: 100px;
     max-width: 100px;
     height: auto;
     margin: 0;
 }
+
+ 
 /* ticket's result */
 .result {
     max-width: 400px;
     margin: 20px auto;
     padding: 15px;
-    background: #f4f4f4;
+    background: $color-tertiary;
     border-radius: 5px;
 }

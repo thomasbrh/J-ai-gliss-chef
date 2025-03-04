@@ -2,23 +2,19 @@
 /* grid */
 .grid {
     box-sizing: border-box;
-    padding: 0 0px;
+    padding: 0 80px;
     width: 100%;
     max-width: 100%;
     display: grid;
     grid-column-gap: 1em;
     justify-content: center;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
 }
 
 
 /* placement grid */
 .grid > * {
-    grid-column: 2/-1;
-}
-
-.grid--full > * {
-    grid-column: 1/6;
+    grid-column: 1/-1;
 }
 
 .grid-start1 {

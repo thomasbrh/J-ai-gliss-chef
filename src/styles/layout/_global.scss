@@ -10,7 +10,7 @@ main {
 
 header, 
 footer {
-    margin: 0;
+    margin: 40px 80px;
     overflow-x: hidden;
 }
 
@@ -19,32 +19,38 @@ body {
     background-color: $color-bg;
 }
 
+footer {
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+}
+
+
 /* form */
 form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: $color-white;
+    font-family: $font-secondary;
+    margin: 2em auto;
+    padding: 1em;
+    border-radius: 1em;
+    background: $color-tertiary;
 }
 
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 1em;
 }
 
 select, input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    width: 85%;
+    padding: 0.5em;
+    margin-top: 0.5em;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 1em;
+    padding: 0.5em;
     width: 100%;
-    background-color: blue;
+    background-color: $color-primary;
     color: white;
     border: none;
     cursor: pointer;

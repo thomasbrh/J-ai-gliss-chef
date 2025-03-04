@@ -26,48 +26,77 @@
     </head>
 
     <body> 
-        <header>
-            <h1 class="title-big">Réservez votre ticket pour le Titanic !</h1>
-            <img src="assets/images/illustration_titanic.svg" alt="Illustraion esthétique du Titanic en trait bleu">
+        <header id="header">
+            <h1 class="title-big">Réservez votre ticket<br><span class="title-section">pour le Titanic !</span></h1>
+            <img src="assets/images/illustration_titanic.svg" class="img--header" alt="Illustraion esthétique du Titanic en trait bleu">
         </header>
     
-        <form id="userForm">
-            <h2>Blue star line</h2>
+        <section class="grid" id="ticket">
+            <form id="userForm">
+                <h2 class="title-section">Blue star line</h2>
+                <img src="assets/images/Logo.svg" class="logo" alt="logo de blue star line">
+        
+                <p class="paragraph-default">Ticket #635</p>
+                <p class="paragraph-default">Départ 10 Avril 1912</p>
+        
+                <label for="prenom nom">Prénom et nom :</label>
+                <input type="text" id="prenom nom" placeholder="Votre prénom et nom">
+        
+                <label for="sexe">Sexe :</label>
+                <select id="sexe">
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                </select>
+        
+                <label for="age">Age :</label>
+                <input type="number" id="age" placeholder="Entrez votre age">
+        
+                <label for="classe">Classe de transport :</label>
+                <select id="classe">
+                    <option value="1">1ère classe</option>
+                    <option value="2">2ème classe</option>
+                    <option value="3">3ème classe</option>
+                </select>
+        
+                <p class="paragraph-default">Destination : New York</p>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
+        
+        <section class="grid" id="informations">
+            <h2 class="title-section">Pont Supérieur et Sécurité</h2>
+            <p class="paragraph-default">Ces ponts comprenaient la promenade de première classe, le fumoir, ainsi que les canots de sauvetage. La passerelle de commandement et la salle radio étaient situées ici, servant à la navigation et aux communications.</p>
+            <img src="assets/images/Plan_3-4-01.svg" alt="Partie 1 du schéma du Titanic">
+            
+            <img src="assets/images/Plan_3-4-02.svg" alt="Partie 2 du schéma du Titanic">
+            <h2 class="title-section">Luxe et Première Classe</h2>
+            <p class="paragraph-default">Ces ponts étaient réservés aux passagers les plus fortunés, avec des suites luxueuses, le restaurant à la carte, le Café Parisien et d’autres services prestigieux. Le bureau du commissaire de bord se trouvait aussi ici.</p>
+            
+            <h2 class="title-section">Espaces Mixtes et Seconde Classe</h2>
+            <p class="paragraph-default">Ces niveaux mélangeaient les cabines de première, deuxième et troisième classe. On y trouvait aussi la grande salle à manger de première classe, la salle à manger de seconde classe, ainsi que les accès aux ascenseurs et aux allées des stewards.</p>
+            <img src="assets/images/Plan_3-4-03.svg" alt="Partie 3 du schéma du Titanic">
+
+            <img src="assets/images/Plan_3-4-04.svg" alt="Partie 4 du schéma du Titanic">
+            <h2 class="title-section">Les Ponts Inférieurs</h2>
+            <p class="paragraph-default">Ces ponts hébergeaient les cabines de troisième classe, une population majoritairement composée de familles et d’immigrants. On y trouvait aussi des services comme la salle à manger, les sanitaires, l’hôpital, ainsi que la piscine et les bains turcs.</p>
+            
+            <h2 class="title-section">Les Ponts Inférieurs</h2>
+            <p class="paragraph-default">Ces niveaux souterrains contenaient les salles des machines, les chaudières, et les réserves de charbon. C’était le cœur technique du navire, inaccessible aux passagers.</p>
+            <img src="assets/images/Plan_3-4-05.svg" alt="Partie 5 du schéma du Titanic">
+        </section>
+
+        <section class="grid">
+            <h2 class="title-section">Blue star line</h2>
             <img src="assets/images/Logo.svg" class="logo" alt="logo de blue star line">
-    
-            <p>Ticket #635</p>
-            <p>Départ 10 Avril 1912</p>
-    
-            <label for="prenom nom">Prénom et nom :</label>
-            <input type="text" id="prenom nom" placeholder="Votre prénom et nom">
-    
-            <label for="sexe">Sexe :</label>
-            <select id="sexe">
-                <option value="Homme">Homme</option>
-                <option value="Femme">Femme</option>
-            </select>
-    
-            <label for="age">Age :</label>
-            <input type="number" id="age" placeholder="Entrez votre age">
-    
-            <label for="classe">Classe de transport :</label>
-            <select id="classe">
-                <option value="1">1ère classe</option>
-                <option value="2">2ème classe</option>
-                <option value="3">3ème classe</option>
-            </select>
-    
-            <p>Destination : New York</p>
-            <button type="submit">Enregistrer</button>
-        </form>
-    
-        <img src="assets/images/Plan_3-4-01.svg" alt="Partie 1 du schéma du Titanic">
-        <img src="assets/images/Plan_3-4-02.svg" alt="Partie 2 du schéma du Titanic">
-        <img src="assets/images/Plan_3-4-03.svg" alt="Partie 3 du schéma du Titanic">
-        <img src="assets/images/Plan_3-4-04.svg" alt="Partie 4 du schéma du Titanic">
-        <img src="assets/images/Plan_3-4-05.svg" alt="Partie 5 du schéma du Titanic">
+            <h2 class="title-section">Prénom Nom</h2>
 
+            <h2 class="title-section">Votre pourcentage de survie</h2>
 
-        <div class="result" id="result"></div>
+            <div class="result" id="result"></div>
+        </section>
+
+        <footer id="footer">
+            <p class="paragraph-default paragraph--footer">Crédits : Thomas Bruch — Danica Delfosse — Alyssa Beaufils — Elodie Somerlinck<br>© 2025</p>
+        </footer>
     </body>
 </html>
