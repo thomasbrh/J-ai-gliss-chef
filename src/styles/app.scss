@@ -51,6 +51,10 @@ img {
     max-width: 6em;
 }
 
+.rotate {
+    transform: rotate(90deg);
+}
+
 
 /* form */
 /* ticket */
@@ -85,6 +89,12 @@ img {
         background-color: $color-primary;
         color: $color-white;
     }
+}
+
+.btn-img {
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
  
 

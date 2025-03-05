@@ -1,6 +1,10 @@
 'use strict';
 /* L'IA a été utilisé pour la création de ces scripts */
 
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script chargé !");
+});
+
 /* chargement des données JSON dès le début */
 let titanicData = [];
 fetch("assets/data/data.json")
@@ -33,6 +37,48 @@ function updateProgressBar() {
     const progressBar = document.getElementById("progress-bar");
     progressBar.style.width = progress + "%";
 }
+
+
+
+/* changer de section/plan */
+window.showPage = showPage;
+
+function showPage(pageId) {
+    let isBisPage = pageId.includes('-bis');
+
+    if (isBisPage) {
+        // Si on affiche une page "bis", cacher toutes les pages normales
+        document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
+            el.style.display = "none";
+        });
+    } else {
+        // Si on revient sur une page normale, réafficher toutes les pages normales
+        document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
+            el.style.display = "block";
+        });
+    }
+
+    // Masquer toutes les pages "bis"
+    document.querySelectorAll('.content[id*="-bis"]').forEach(el => {
+        el.style.display = "none";
+    });
+
+    // Afficher uniquement la page demandée
+    let targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.style.display = "block";
+    }
+}
+
+
+
+/* changer d'image */
+document.querySelectorAll('.legend-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const newSrc = this.getAttribute('data-src'); // Récupère l'URL de l'image
+        document.getElementById('schemaImage').src = newSrc; // Change l'image
+    });
+});
 
 
 
