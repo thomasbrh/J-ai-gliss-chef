@@ -17,7 +17,16 @@ fetch("assets/data/data.json")
         console.error("Erreur lors du chargement des données", error);
     });
 
-/* form */
+    
+/* getRandom */
+function getRandomTicketNumber() {
+    return Math.floor(Math.random() * 2224) + 1;
+}
+// Example usage:
+const ticketNumber = getRandomTicketNumber();
+
+
+/* form + result*/
 document.addEventListener("DOMContentLoaded", function() {
     // sélection du formulaire et des éléments
     const form = document.getElementById("userForm");

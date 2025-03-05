@@ -41,7 +41,7 @@
                 <img src="assets/images/Logo.svg" class="logo" alt="Logo de blue star line">
         
                 <!-- informations ticket -->
-                <p class="paragraph-default">Ticket #635</p> <!-- rajouter getrandom -->
+                <p class="paragraph-default" id="ticket-number">Ticket #</p>
                 <p class="paragraph-default">Départ 10 Avril 1912</p>
         
                 <!-- prenom nom -->
@@ -150,5 +150,9 @@
         <footer id="footer">
             <p class="paragraph--footer">Crédits : Thomas Bruch — Danica Delfosse — Alyssa Beaufils — Elodie Somerlinck<br>© 2025</p>
         </footer>
+
+        <script>
+            document.getElementById('ticket-number').textContent = 'Ticket #' + Math.floor(Math.random() * 2224 + 1);
+        </script>
     </body>
 </html>
