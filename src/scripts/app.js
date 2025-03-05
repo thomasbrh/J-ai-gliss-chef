@@ -1,7 +1,7 @@
 'use strict';
 /* L'IA a été utilisé pour la création de ces scripts */
 
-/* Chargement des données JSON dès le début */
+/* chargement des données JSON dès le début */
 let titanicData = [];
 fetch("assets/data/data.json")
     .then(response => {
@@ -17,11 +17,14 @@ fetch("assets/data/data.json")
         console.error("Erreur lors du chargement des données", error);
     });
 
+
+
 /* progress bar */
 window.onscroll = function() {
     updateProgressBar();
 };
- 
+
+ // fonction pour mettre à jour la barre de progression
 function updateProgressBar() {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -31,15 +34,36 @@ function updateProgressBar() {
     progressBar.style.width = progress + "%";
 }
 
-/* getRandom */
+
+
+/* ticket number */
+// Fonction pour générer un numéro de ticket aléatoire
 function getRandomTicketNumber() {
     return Math.floor(Math.random() * 2224) + 1;
 }
-// Example usage:
+
+// Générer et stocker un seul numéro de ticket
 const ticketNumber = getRandomTicketNumber();
 
+// Afficher le même numéro dans l'élément HTML et dans la console
+document.getElementById('ticket-number').textContent = 'Ticket #' + ticketNumber;
+console.log(ticketNumber);
+    
 
-/* form + result*/
+
+/* selection de la classe */
+document.querySelectorAll('.btn-classe').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.btn-classe').forEach(btn => btn.classList.remove('selected'));
+        this.classList.add('selected');
+        const selectedClass = this.value;
+        console.log('Classe sélectionnée:', selectedClass);
+    });
+});
+
+
+
+/* form and result */
 document.addEventListener("DOMContentLoaded", function() {
     // sélection du formulaire et des éléments
     const form = document.getElementById("userForm");
@@ -50,14 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); // Empêche le rechargement de la page
 
         // récupération des valeurs
+        let prenomNom = document.getElementById("prenom-nom").value;
         let sexe = document.getElementById("sexe").value;
         let age = parseFloat(document.getElementById("age").value);
-        let classe = parseInt(document.getElementById("classe").value);
+        let ageCategory = age > 12 ? "adulte" : "enfant";
+        let classe = document.querySelector('.btn-classe.selected').value;
 
         // création d'un objet utilisateur
         let utilisateur = {
+            prenomNom: prenomNom,
             sexe: sexe,
             age: age,
+            ageCategory: ageCategory,
             classe: classe
         };
 
@@ -75,10 +103,19 @@ document.addEventListener("DOMContentLoaded", function() {
         if (data) {
             let utilisateur = JSON.parse(data);
             resultDiv.innerHTML = `
-                <h3>Informations enregistrées :</h3>
-                <p><strong>Sexe :</strong> ${utilisateur.sexe}</p>
-                <p><strong>Age :</strong> ${utilisateur.age}</p>
-                <p><strong>Classe de transport :</strong> ${utilisateur.classe}</p>
+                <p class="paragraph-default"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</p>
+
+                <div class="box-result">
+                <p class="paragraph-default"><strong>Sexe :</strong> ${utilisateur.sexe}</p>
+                </div>
+
+                <div class="box-result">
+                <p class="paragraph-default"><strong>Age :</strong> ${utilisateur.age}</p>
+                </div>
+
+                <div class="box-result">
+                <p class="paragraph-default"><strong>Classe de transport :</strong> ${utilisateur.classe}</p>
+                </div>
             `;
         }
     }
@@ -99,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
             passager.Sex === (utilisateur.sexe === "Homme" ? "male" : "female") &&
             passager.Pclass === utilisateur.classe &&
             passager.Age !== null &&
+             ((utilisateur.ageCategory === "adulte" && passager.Age > 12) || (utilisateur.ageCategory === "enfant" && passager.Age <= 12)) &&
             Math.abs(passager.Age - utilisateur.age) <= 5
         );
 

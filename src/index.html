@@ -27,6 +27,7 @@
     </head>
 
     <body> 
+        <!-- progress bar -->
         <div id="progress-bar-container">
             <div id="progress-bar"></div>
         </div>
@@ -49,30 +50,30 @@
                 <p class="paragraph-default">Départ 10 Avril 1912</p>
         
                 <!-- prenom nom -->
-                <label for="prenom nom" class="userForm__label">Prénom et nom :</label>
-                <input type="text" id="prenom nom" placeholder="Votre prénom et nom">
+                <label for="prenom-nom" class="userForm__label">Prénom et nom :</label>
+                <input type="text" id="prenom-nom" placeholder="Votre prénom et nom" required>
         
                 <!-- sexe -->
                 <label for="sexe" class="userForm__label">Sexe :</label>
-                <select id="sexe">
+                <select id="sexe" required>
                     <option value="Homme">Homme</option>
                     <option value="Femme">Femme</option>
                 </select>
         
                 <!-- age -->
                 <label for="age" class="userForm__label">Age :</label>
-                <input type="number" id="age" placeholder="Entrez votre age">
+                <input type="number" id="age" placeholder="Entrez votre age" required>
         
                 <!-- classe -->
-                <label for="classe">Classe de transport :</label>
-                <select id="classe">
-                    <option value="1">1ère classe</option>
-                    <option value="2">2ème classe</option>
-                    <option value="3">3ème classe</option>
-                </select>
-        
-                <p class="paragraph-default">Destination : New York</p>
-                <button type="submit" class="btn">Réserver</button>
+            <label for="classe">Classe de transport :</label>
+            <div id="classe">
+                <button type="button" class="btn btn-classe" value="1">1ère classe</button>
+                <button type="button" class="btn btn-classe" value="2">2ème classe</button>
+                <button type="button" class="btn btn-classe" value="3">3ème classe</button>
+            </div>
+    
+            <p class="paragraph-default">Destination : New York</p>
+            <button type="submit" class="btn">Réserver</button>
             </form>
 
             <h2 class="title-section">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h2>
@@ -138,12 +139,7 @@
                 <h2 class="title-section">Blue star line</h2>
                 <img src="assets/images/titanic_tampon.svg" class="logo" alt="Tampon de Blue star line">
 
-                <div class="result" id="result"></div> <!-- Faut mettre ça sous une autre forme + script -->
-                <h2 class="title-section">Prénom Nom</h2> <!-- Enregistrer la donnée et la return ici -->
-
-                <h2 class="title-section">Votre pourcentage de survie</h2>
-
-                <div class="result" id="result"></div> <!-- changer pour avoir uniquement chance de survie -->
+                <div class="result" id="result"></div>
             </div>
         </section>
 
@@ -154,9 +150,5 @@
         <footer id="footer">
             <p class="paragraph--footer">Crédits : Thomas Bruch — Danica Delfosse — Alyssa Beaufils — Elodie Somerlinck<br>© 2025</p>
         </footer>
-
-        <script>
-            document.getElementById('ticket-number').textContent = 'Ticket #' + Math.floor(Math.random() * 2224 + 1);
-        </script>
     </body>
 </html>

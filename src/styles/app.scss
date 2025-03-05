@@ -75,6 +75,16 @@ img {
         border: none;
         cursor: pointer;
     }
+
+    .btn-classe {
+        background-color: $color-white;
+        color: $color-primary;
+    }
+
+    .selected {
+        background-color: $color-primary;
+        color: $color-white;
+    }
 }
  
 
@@ -88,6 +98,21 @@ img {
     .result {
         margin: 1em auto;
         padding: 1em 0;
+    }
+
+    .box-result {
+        width: 50%;
+        margin-top: 1em;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: $color-white;
+        border: none;
+        cursor: pointer;
+
+        .paragraph-default {
+            color: $color-primary;
+            margin-bottom: 0;
+        }
     }
 }
 
