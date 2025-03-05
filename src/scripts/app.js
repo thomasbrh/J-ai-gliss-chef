@@ -17,7 +17,20 @@ fetch("assets/data/data.json")
         console.error("Erreur lors du chargement des données", error);
     });
 
-    
+/* progress bar */
+window.onscroll = function() {
+    updateProgressBar();
+};
+ 
+function updateProgressBar() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / docHeight) * 100;
+ 
+    const progressBar = document.getElementById("progress-bar");
+    progressBar.style.width = progress + "%";
+}
+
 /* getRandom */
 function getRandomTicketNumber() {
     return Math.floor(Math.random() * 2224) + 1;
