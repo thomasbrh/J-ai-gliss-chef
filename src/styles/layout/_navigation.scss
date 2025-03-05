@@ -1,1 +1,17 @@
 /* navigation */
+#progress-bar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    background-color: $color-bg;
+    z-index: 1;
+}
+ 
+#progress-bar {
+    height: 100%;
+    background-color: $color-primary;
+    width: 0;
+    transition: width 0.1s ease-out;
+}

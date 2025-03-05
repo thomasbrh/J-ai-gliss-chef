@@ -37,6 +37,7 @@ h1, h2, h3, h4, h5, h6, p {
 .paragraph-default {
     font-family: $font-secondary;
     font-size: $size-text;
+    color: $color-black;
     line-height: 1.6;
     margin-bottom: 1em;
     max-width: 85ch;
