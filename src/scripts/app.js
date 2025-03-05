@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // sélection du formulaire et des éléments
     const form = document.getElementById("userForm");
     const resultDiv = document.getElementById("result");
+    const survivalChanceDiv = document.getElementById("survival-chance");
 
     // écoute de la soumission du formulaire
     form.addEventListener("submit", function(event) {
@@ -102,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function() {
         let data = localStorage.getItem("utilisateur");
         if (data) {
             let utilisateur = JSON.parse(data);
-            resultDiv.innerHTML = `
-                <p class="paragraph-default"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</p>
+            resultDiv.innerHTML = 
+                `<p class="paragraph-default"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</p>
 
                 <div class="box-result">
                 <p class="paragraph-default"><strong>Sexe :</strong> ${utilisateur.sexe}</p>
@@ -115,8 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 <div class="box-result">
                 <p class="paragraph-default"><strong>Classe de transport :</strong> ${utilisateur.classe}</p>
-                </div>
-            `;
+                </div>`;
         }
     }
 
@@ -127,26 +127,33 @@ document.addEventListener("DOMContentLoaded", function() {
     function calculerSurvie(utilisateur) {
         // Vérifier si les données sont chargées
         if (titanicData.length === 0) {
-            resultDiv.innerHTML += `<p><strong>Erreur :</strong> Données non chargées</p>`;
+            survivalChanceDiv.innerHTML = `<p class"paragraph-default"><strong>Erreur :</strong> Données non chargées</p>`;
             return;
         }
 
         // Filtrer les données en fonction des critères utilisateur
         let correspondances = titanicData.filter(passager =>
             passager.Sex === (utilisateur.sexe === "Homme" ? "male" : "female") &&
-            passager.Pclass === utilisateur.classe &&
+            passager.Pclass === parseInt(utilisateur.classe) &&
             passager.Age !== null &&
-             ((utilisateur.ageCategory === "adulte" && passager.Age > 12) || (utilisateur.ageCategory === "enfant" && passager.Age <= 12)) &&
-            Math.abs(passager.Age - utilisateur.age) <= 5
+            ((utilisateur.ageCategory === "adulte" && passager.Age > 12) || 
+             (utilisateur.ageCategory === "enfant" && passager.Age <= 12))
         );
 
         // Calcul du taux de survie
         if (correspondances.length > 0) {
             let survivants = correspondances.filter(p => p.Survived === 1).length;
             let tauxSurvie = (survivants / correspondances.length) * 100;
-            resultDiv.innerHTML += `<p><strong>Chances de survie :</strong> ${tauxSurvie.toFixed(2)}%</p>`;
+            survivalChanceDiv.innerHTML = 
+            `<h2 class"paragraph-default"><strong>Chances de survie :</strong></h2>
+            
+            <p class="paragraph-default">Il y a ${survivants} survivants sur ${correspondances.length} passagers correspondants.</p>
+            
+            <p class="title-big">${tauxSurvie.toFixed(2)}%</p>`;
+
+                                           
         } else {
-            resultDiv.innerHTML += `<p><strong>Chances de survie :</strong> Données insuffisantes</p>`;
+            survivalChanceDiv.innerHTML = `<p class"paragraph-default"><strong>Chances de survie :</strong> Données insuffisantes</p>`;
         }
     }
 });

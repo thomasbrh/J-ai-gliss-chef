@@ -2,13 +2,13 @@
 <html lang="fr">
     <!-- L'IA a été utilisé pour le form -->
     <head>
-        <title>DataPlay - Titanic</title>
+        <title>DataPlay - ToucherCouler</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <!-- meta Partage -->
-        <meta property="og:site_name" content="DataPlay - Titanic" >
+        <meta property="og:site_name" content="DataPlay - ToucherCouler" >
         <meta property="og:title" content="DataPlay" >
         <meta property="og:description" content="DataPlay sur le thème du Titanic" >
         <meta property="og:type" content="website">
@@ -56,6 +56,7 @@
                 <!-- sexe -->
                 <label for="sexe" class="userForm__label">Sexe :</label>
                 <select id="sexe" required>
+                    <option value="" disabled selected>Choisissez votre sexe</option>
                     <option value="Homme">Homme</option>
                     <option value="Femme">Femme</option>
                 </select>
@@ -65,15 +66,16 @@
                 <input type="number" id="age" placeholder="Entrez votre age" required>
         
                 <!-- classe -->
-            <label for="classe">Classe de transport :</label>
-            <div id="classe">
-                <button type="button" class="btn btn-classe" value="1">1ère classe</button>
-                <button type="button" class="btn btn-classe" value="2">2ème classe</button>
-                <button type="button" class="btn btn-classe" value="3">3ème classe</button>
-            </div>
-    
-            <p class="paragraph-default">Destination : New York</p>
-            <button type="submit" class="btn">Réserver</button>
+                <fieldset>
+                    <legend>Classe de transport :</legend>
+                    <button type="button" class="btn btn-classe" value="1">1ère classe</button>
+                    <button type="button" class="btn btn-classe" value="2">2ème classe</button>
+                    <button type="button" class="btn btn-classe" value="3">3ème classe</button>
+                </fieldset>
+        
+                <!-- réserver -->
+                <p class="paragraph-default">Destination : New York</p>
+                <button type="submit" class="btn">Réserver</button>
             </form>
 
             <h2 class="title-section">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h2>
@@ -140,6 +142,7 @@
                 <img src="assets/images/titanic_tampon.svg" class="logo" alt="Tampon de Blue star line">
 
                 <div class="result" id="result"></div>
+                <div class="result" id="survival-chance"></div>
             </div>
         </section>
 
