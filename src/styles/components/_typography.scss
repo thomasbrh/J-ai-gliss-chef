@@ -5,39 +5,55 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .title-big, 
-.title-section,  
-.title-footer {
+.title-section {
     font-family: $font-primary;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .title-big {
-    font-size: 100px;
+    font-size: 42px;
+    margin-bottom: 1em;
+
+    @include responsive(tablet) {
+    }    
+
+    @include responsive(desktop) {
+        font-size: 100px;
+    }
 }
 
 .title-section {
-    font-size: 36px;
-}
+    font-size: 28px;
+    margin-bottom: 1em;
 
-.title-footer {
-    font-size: 0px;
+    @include responsive(tablet) {
+    }    
+
+    @include responsive(desktop) {
+        font-size: 36px;
+    }
 }
 
 .paragraph-default {
     font-family: $font-secondary;
     font-size: $size-text;
     line-height: 1.6;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
     max-width: 85ch;
+
+    @include responsive(tablet) {
+        font-size: 18px;
+    }
+
+    @include responsive(tablet) {
+        font-size: 20px;
+    }
 }
 .paragraph--footer {
-    color: $color-white;
-}
-
-.paragraph-footer {
     font-family: $font-secondary;
-    font-size: 0px;
+    font-size: 12px;
     line-height: 1.6;
+    text-align: center;
     color: $color-white;
 }
 

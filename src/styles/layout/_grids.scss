@@ -1,14 +1,20 @@
-/* Grid */
 /* grid */
 .grid {
     box-sizing: border-box;
-    padding: 0 80px;
+    padding: 16px;
     width: 100%;
     max-width: 100%;
     display: grid;
-    grid-column-gap: 1em;
-    justify-content: center;
-    grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
+
+    @include responsive(tablet) {
+        padding: 0;
+        justify-content: center;
+        grid-column-gap: 1em;
+        grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
+    }
+    
+    @include responsive(desktop) {
+    }
 }
 
 

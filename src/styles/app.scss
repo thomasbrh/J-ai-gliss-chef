@@ -1,19 +1,17 @@
 // import des fichiers utilitaires (variables, mixins, functions…)
-@import "utils/variables";
 @import "utils/mixins";
 @import "utils/functions";
-
-// import des styles de base
-@import "components/typography"; 
+@import "utils/variables";
 
 // import des mises en page (grilles, sections…)
 @import "layout/global";
 @import "layout/navigation";
 @import "layout/grids";
 
-/* chatGPT a été utilisé pour de l'optimisation */
+// import des styles de base
+@import "components/typography";
 
-/* chatGPT a été utilisé pour de l'optimisation */
+/* L'IA a été utilisé pour de l'optimisation */
 
 /* img */
 img {
@@ -24,23 +22,88 @@ img {
 }
 
 .img--header {
-    opacity: 0.75;
+    position: relative;
+    right: -20%;;
     height: 75dvh;
+
+    @include responsive(desktop) {
+        right: 0;
+    }
+}
+
+.img--schema {
+    margin-bottom: 4em;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.img--iceberg {
+    position: relative;
+    z-index: -100;
+    top: 30px;
 }
 
 .logo {
-    width: 100px;
-    max-width: 100px;
-    height: auto;
-    margin: 0;
+    width: 6em;
+    max-width: 6em;
 }
 
- 
-/* ticket's result */
-.result {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 15px;
+
+/* form */
+/* ticket */
+.userForm {
+    padding: 2em;
+    font-family: $font-secondary;
+    border-radius: 1em;
     background: $color-tertiary;
-    border-radius: 5px;
+
+    .userForm__label {
+        display: block;
+        margin-top: 1em;
+    }
+
+    .btn {
+        margin-top: 1em;
+        padding: 1em;
+        width: 100%;
+        background-color: $color-primary;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+}
+ 
+
+/* ticket's result */
+.ticket_result {
+   padding: 2em;
+   font-family: $font-secondary;
+   border-radius: 1em;
+   background: $color-tertiary;
+
+    .result {
+        margin: 1em auto;
+        padding: 1em 0;
+    }
+}
+
+
+/* version */
+.mobile {
+    display: block;
+
+    @include responsive(desktop) {
+        display: none;
+    }
+}
+
+.desktop {
+    display: none;
+
+    @include responsive(desktop) {
+        display: block;
+    }
 }

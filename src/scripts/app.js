@@ -1,5 +1,5 @@
 'use strict';
-/* chatGPT a été utilisé pour la création de ces scripts */
+/* L'IA a été utilisé pour la création de ces scripts */
 
 /* Chargement des données JSON dès le début */
 let titanicData = [];

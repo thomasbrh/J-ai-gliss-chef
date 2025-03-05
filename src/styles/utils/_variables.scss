@@ -12,17 +12,3 @@ $color-text: #333;
 $color-primary: #171636;
 $color-secondary: #000;
 $color-tertiary: #DFD4C1;
-
-
-@media (min-width: 768px) { /* tablette (768px et plus) */
-    :root {
-        --size-text: 18px;
-    }
-}
-
-
-@media (min-width: 1280px) { /* desktop (1280px et plus) */
-    :root {
-        --size-text: 20px;
-    }
-}

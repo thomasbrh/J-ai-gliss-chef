@@ -10,8 +10,15 @@ main {
 
 header, 
 footer {
-    margin: 40px 80px;
+    padding: 16px;
     overflow-x: hidden;
+
+    @include responsive(tablet) {
+    }
+
+    @include responsive(desktop) {
+        padding: 40px 80px;
+    }
 }
 
 body {
@@ -27,31 +34,14 @@ footer {
 
 
 /* form */
-form {
-    font-family: $font-secondary;
-    margin: 2em auto;
-    padding: 1em;
+select, input, button {
+    border: none;
     border-radius: 1em;
-    background: $color-tertiary;
-}
-
-label {
-    display: block;
-    margin-top: 1em;
 }
 
 select, input {
+    font-family: $font-secondary;
     width: 85%;
-    padding: 0.5em;
-    margin-top: 0.5em;
-}
-
-button {
-    margin-top: 1em;
-    padding: 0.5em;
-    width: 100%;
-    background-color: $color-primary;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 1em;
+    margin: 1em 0;
 }
