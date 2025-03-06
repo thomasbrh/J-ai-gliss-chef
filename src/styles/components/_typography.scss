@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .title-small {
     font-size: 21px;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
 
     @include responsive(tablet) {
     }    

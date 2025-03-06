@@ -41,8 +41,13 @@ img {
 
 .img--iceberg {
     position: relative;
+    display: none;
     z-index: -100;
     top: 30px;
+
+    @include responsive(desktop) {
+        display:block;
+    }
 }
 
 .logo {

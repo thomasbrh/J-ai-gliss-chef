@@ -1,8 +1,12 @@
 'use strict';
+/* Importation de GSAP */
+import gsap from "gsap";
+
 /* L'IA a été utilisée pour la création de ces scripts */
 
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script chargé !");
+    console.log(typeof gsap !== "undefined" ? "GSAP est bien chargé" : "GSAP ne fonctionne pas");
 });
 
 
@@ -22,6 +26,69 @@ fetch("assets/data/data.json")
     .catch(error => {
         console.error("Erreur lors du chargement des données", error);
     });
+
+
+
+/* Animation du ticket */
+document.addEventListener("DOMContentLoaded", () => {
+    let ticket = document.querySelector(".ticket");
+
+    if (ticket) {
+        // Animation de flottement plus fluide et plus haute
+        let floatingAnimation = gsap.to(ticket, {
+            y: -30,
+            duration: 2,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true
+        });
+
+        // Dès que l'utilisateur scrolle, on arrête l'effet flottant
+        window.addEventListener("scroll", () => {
+            floatingAnimation.kill(); // Stoppe l'animation
+            gsap.set(ticket, { y: 0 }); // Remet le ticket à sa position d'origine
+        }, { once: true }); // L'événement ne s'exécute qu'une seule fois
+    } else {
+        console.error("Élément .ticket non trouvé !");
+    }
+});
+
+
+
+/* Animation du résultat et des images */
+document.addEventListener("DOMContentLoaded", () => {
+    // Animation du résultat (.ticket_result)
+    let ticketResult = document.querySelector(".ticket_result");
+
+    if (ticketResult) {
+        gsap.to(ticketResult, {
+            scale: 1.05,
+            duration: 1.5,
+            ease: "sine.inOut",
+            repeat: -1, // Répétition infinie
+            yoyo: true
+        });
+    } else {
+        console.error("Élément .ticket_result non trouvé !");
+    }
+
+    // Animation des images (.img--schema)
+    let images = document.querySelectorAll(".img--schema");
+
+    if (images.length > 0) {
+        gsap.to(images, {
+            scale: 1.05,
+            duration: 1.5,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+            stagger: 0.1
+        });
+    } else {
+        console.error("Aucun élément .img--schema trouvé !");
+    }
+});
+
 
 
 
