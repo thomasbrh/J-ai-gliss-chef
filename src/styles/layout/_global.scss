@@ -21,6 +21,10 @@ footer {
     }
 }
 
+header {
+    height: 70dvh;
+}
+
 body {
     margin: 0;
     background-color: $color-bg;
@@ -35,13 +39,17 @@ footer {
 
 /* form */
 select, input, button {
+    box-sizing: border-box;
     border: none;
     border-radius: 1em;
 }
 
 select, input {
     font-family: $font-secondary;
-    width: 85%;
+    width: 100%;
     padding: 1em;
-    margin: 1em 0;
+}
+
+.margin {
+    margin-top: 1em;
 }

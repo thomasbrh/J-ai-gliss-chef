@@ -39,3 +39,12 @@
 .grid-end5 {
     grid-column-end: 5;
 }
+
+
+/* flexbox */
+.grid-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 1em;
+}

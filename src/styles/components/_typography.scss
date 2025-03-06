@@ -5,6 +5,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .title-big, 
+.title-medium, 
+.title-small,
 .title-section {
     font-family: $font-primary;
     line-height: 1.2;
@@ -22,7 +24,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-.title-section {
+.title-medium {
     font-size: 28px;
     margin-bottom: 1em;
 
@@ -34,6 +36,28 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
+.title-small {
+    font-size: 21px;
+    margin-bottom: 1em;
+
+    @include responsive(tablet) {
+    }    
+
+    @include responsive(desktop) {
+    }
+}
+
+.title-section {
+    font-size: 25px;
+    margin-bottom: 1em;
+
+    @include responsive(tablet) {
+    }    
+
+    @include responsive(desktop) {
+    }
+}
+
 .paragraph-default {
     font-family: $font-secondary;
     font-size: $size-text;
@@ -41,6 +65,7 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.6;
     margin-bottom: 1em;
     max-width: 85ch;
+    color: $color-black;
 
     @include responsive(tablet) {
         font-size: 18px;

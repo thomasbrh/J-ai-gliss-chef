@@ -149,8 +149,9 @@ document.addEventListener("DOMContentLoaded", function() {
         let data = localStorage.getItem("utilisateur");
         if (data) {
             let utilisateur = JSON.parse(data);
+            console.log(utilisateur);
             resultDiv.innerHTML = 
-                `<p class="paragraph-default"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</p>
+                `<h3 class="title-small"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</h3>
 
                 <div class="box-result">
                 <p class="paragraph-default"><strong>Sexe :</strong> ${utilisateur.sexe}</p>
@@ -191,11 +192,11 @@ document.addEventListener("DOMContentLoaded", function() {
             let survivants = correspondances.filter(p => p.Survived === 1).length;
             let tauxSurvie = (survivants / correspondances.length) * 100;
             survivalChanceDiv.innerHTML = 
-            `<h2 class"paragraph-default"><strong>Chances de survie :</strong></h2>
+            `<h3 class"title-small"><strong>Chances de survie :</strong></h3>
             
             <p class="paragraph-default">Il y a ${survivants} survivants sur ${correspondances.length} passagers correspondants.</p>
             
-            <p class="title-big">${tauxSurvie.toFixed(2)}%</p>`;
+            <h3 class="title-big">${tauxSurvie.toFixed(2)}%</h3>`;
 
                                            
         } else {

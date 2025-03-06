@@ -23,8 +23,7 @@ img {
 
 .img--header {
     position: relative;
-    right: -20%;;
-    height: 75dvh;
+    height: 25dvh;
 
     @include responsive(desktop) {
         right: 0;
@@ -47,8 +46,8 @@ img {
 }
 
 .logo {
-    width: 6em;
-    max-width: 6em;
+    width: 4em;
+    max-width: 4em;
 }
 
 .rotate {
@@ -64,6 +63,12 @@ img {
     border-radius: 1em;
     background: $color-tertiary;
     margin-bottom: 6em;
+
+    .userField {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
 
     .userForm__label {
         display: block;
@@ -111,7 +116,6 @@ img {
     }
 
     .box-result {
-        width: 50%;
         margin-top: 1em;
         padding: 1em;
         border-radius: 1em;

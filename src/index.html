@@ -34,7 +34,7 @@
 
         <!-- header -->
         <header id="header">
-            <h1 class="title-big">Réservez votre ticket<br><span class="title-section">pour le Titanic !</span></h1>
+            <h1 class="title-big">Réservez votre ticket<br><span class="title-medium">pour le Titanic !</span></h1>
             <img src="assets/images/illustration_titanic.svg" class="img--header" alt="Illustraion esthétique du Titanic en trait bleu">
         </header>
     
@@ -42,53 +42,69 @@
         <section class="grid" id="ticket">
             <!-- form -->
             <form class="userForm" id="userForm">
-                <h2 class="title-section">Blue star line</h2>
-                <img src="assets/images/Logo.svg" class="logo" alt="Logo de blue star line">
-        
-                <!-- informations ticket -->
-                <p class="paragraph-default" id="ticket-number">Ticket #</p>
-                <p class="paragraph-default">Départ 10 Avril 1912</p>
-        
-                <!-- prenom nom -->
-                <label for="prenom-nom" class="userForm__label">Prénom et nom :</label>
-                <input type="text" id="prenom-nom" placeholder="Votre prénom et nom" required>
-        
-                <!-- sexe -->
-                <label for="sexe" class="userForm__label">Sexe :</label>
-                <select id="sexe" required>
-                    <option value="" disabled selected>Choisissez votre sexe</option>
-                    <option value="Homme">Homme</option>
-                    <option value="Femme">Femme</option>
-                </select>
-        
-                <!-- age -->
-                <label for="age" class="userForm__label">Age :</label>
-                <input type="number" id="age" placeholder="Entrez votre age" required>
-        
-                <!-- classe -->
-                <fieldset>
-                    <legend>Classe de transport :</legend>
+                <fieldset class="userField">
+                    <h2 class="title-medium">Blue star line</h2>
+            
+                    <!-- informations ticket -->
+                    <div class="grid-flex">
+                        <p class="paragraph-default" id="ticket-number">Ticket #</p>
+                        <p class="paragraph-default">Départ 10 Avril 1912</p>
+                    </div>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- prenom nom -->
+                    <label for="prenom-nom" class="userForm__label paragraph-default">Prénom et nom :</label>
+                    <input type="text" id="prenom-nom" placeholder="Votre prénom et nom" required>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- sexe -->
+                    <label for="sexe" class="userForm__label paragraph-default">Sexe :</label>
+                    <select id="sexe" required>
+                        <option value="" disabled selected>Choisissez votre sexe</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                    </select>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- age -->
+                    <label for="age" class="userForm__label paragraph-default">Age :</label>
+                    <input type="number" id="age" placeholder="Entrez votre age" required>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- classe -->
+                    <p class="paragraph-default margin">Classe de transport :</p>
                     <button type="button" class="btn btn-classe" value="1">1ère classe</button>
                     <button type="button" class="btn btn-classe" value="2">2ème classe</button>
-                    <button type="button" class="btn btn-classe" value="3">3ème classe</button>
+                    <button type="button" class="btn btn-classe" value="3">3ème classe</button> 
                 </fieldset>
-        
-                <!-- réserver -->
-                <p class="paragraph-default">Destination : New York</p>
-                <button type="submit" class="btn">Réserver</button>
+
+                <fieldset class="userField">
+                    <!-- réserver -->
+                    <p class="paragraph-default margin">Destination : New York</p>
+
+                    <div class="grid-flex">
+                        <button type="submit" class="btn">Réserver</button>
+
+                        <img src="assets/images/Logo.svg" class="logo" alt="Logo de blue star line">
+                    </div>
+                </fieldset>
             </form>
 
-            <h2 class="title-section">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h2>
+            <h3 class="title-small">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h3>
         </section>
 
         <!-- section informations -->
         <section class="grid" id="informations">
             <!-- version mobile -->
             <div class="mobile">
-                <h1 class="title-big">Survivre au Titanic : Mode d’emploi </h1>
+                <h2 class="title-big">Survivre au Titanic : Mode d’emploi </h2>
                 <!-- page 1 -->
                 <div id="page1" class="content">
-                    <h2 class="title-section">Pont Supérieur et Sécurité</h2>
+                    <h3 class="title-section">Pont Supérieur et Sécurité</h3>
 
                     <p class="paragraph-default">Ces ponts comprenaient la promenade de première classe, le fumoir, ainsi que les canots de sauvetage. La passerelle de commandement et la salle radio étaient situées ici, servant à la navigation et aux communications.</p>
 
@@ -97,7 +113,7 @@
 
                 <!-- page 1-bis -->
                 <div id="page1-bis" class="content" style="display: none;">
-                    <h2 class="title-section">Pont Supérieur et Sécurité</h2>
+                    <h3 class="title-section">Pont Supérieur et Sécurité</h3>
 
                     <p class="paragraph-default">Ces ponts comprenaient la promenade de première classe, le fumoir, ainsi que les canots de sauvetage. La passerelle de commandement et la salle radio étaient situées ici, servant à la navigation et aux communications.</p>
 
@@ -116,7 +132,7 @@
 
                 <!-- page 2 -->
                 <div id="page2" class="content">
-                    <h2 class="title-section">Luxe et Première Classe</h2>
+                    <h3 class="title-section">Luxe et Première Classe</h3>
 
                     <p class="paragraph-default">Ces ponts étaient réservés aux passagers les plus fortunés, avec des suites luxueuses, le restaurant à la carte, le Café Parisien et d’autres services prestigieux. Le bureau du commissaire de bord se trouvait aussi ici.</p>
 
@@ -125,7 +141,7 @@
 
                 <!-- page 2-bis -->
                 <div id="page2-bis" class="content" style="display: none;">
-                    <h2 class="title-section">Luxe et Première Classe</h2>
+                    <h3 class="title-section">Luxe et Première Classe</h3>
 
                     <p class="paragraph-default">Ces ponts étaient réservés aux passagers les plus fortunés, avec des suites luxueuses, le restaurant à la carte, le Café Parisien et d’autres services prestigieux. Le bureau du commissaire de bord se trouvait aussi ici.</p>
 
@@ -144,16 +160,16 @@
 
                 <!-- page 3 -->
                 <div id="page3" class="content">
-                    <h2 class="title-section">Espaces Mixtes et Seconde Classe</h2>
+                    <h3 class="title-section">Espaces Mixtes et Seconde Classe</h3>
 
                     <p class="paragraph-default">Ces niveaux mélangeaient les cabines de première, deuxième et troisième classe. On y trouvait aussi la grande salle à manger de première classe, la salle à manger de seconde classe, ainsi que les accès aux ascenseurs et aux allées des stewards.</p>
                     
-                    <button class="btn-img" onclick="showPage('page3-bis')"><img id="schemaImage" src="assets/images/Plan_3-4-02.svg" class="img--schema" alt="Partie 3 du schéma du Titanic"></button>
+                    <button class="btn-img" onclick="showPage('page3-bis')"><img id="schemaImage" src="assets/images/Plan_3-4-03.svg" class="img--schema" alt="Partie 3 du schéma du Titanic"></button>
                 </div>
 
                 <!-- page 3-bis -->
                 <div id="page3-bis" class="content" style="display: none;">
-                    <h2 class="title-section">Espaces Mixtes et Seconde Classe</h2>
+                    <h3 class="title-section">Espaces Mixtes et Seconde Classe</h3>
 
                     <p class="paragraph-default">Ces niveaux mélangeaient les cabines de première, deuxième et troisième classe. On y trouvait aussi la grande salle à manger de première classe, la salle à manger de seconde classe, ainsi que les accès aux ascenseurs et aux allées des stewards.</p>
 
@@ -172,7 +188,7 @@
 
                 <!-- page 4 -->
                 <div id="page4" class="content">
-                    <h2 class="title-section">Les Ponts Inférieurs</h2>
+                    <h3 class="title-section">Les Ponts Inférieurs</h3>
 
                     <p class="paragraph-default">Ces ponts hébergeaient les cabines de troisième classe, une population majoritairement composée de familles et d’immigrants. On y trouvait aussi des services comme la salle à manger, les sanitaires, l’hôpital, ainsi que la piscine et les bains turcs.</p>
 
@@ -181,7 +197,7 @@
 
                 <!-- page 4-bis -->
                 <div id="page4-bis" class="content" style="display: none;">
-                    <h2 class="title-section">Les Ponts Inférieurs</h2>
+                    <h3 class="title-section">Les Ponts Inférieurs</h3>
 
                     <p class="paragraph-default">Ces ponts hébergeaient les cabines de troisième classe, une population majoritairement composée de familles et d’immigrants. On y trouvait aussi des services comme la salle à manger, les sanitaires, l’hôpital, ainsi que la piscine et les bains turcs.</p>
 
@@ -201,7 +217,7 @@
 
                 <!-- page 5 -->
                 <div id="page5" class="content">
-                    <h2 class="title-section">Les Ponts Inférieurs</h2>
+                    <h3 class="title-section">Les Ponts Inférieurs</h3>
 
                     <p class="paragraph-default">Ces niveaux souterrains contenaient les salles des machines, les chaudières, et les réserves de charbon. C’était le cœur technique du navire, inaccessible aux passagers.</p>
 
@@ -210,7 +226,7 @@
 
                 <!-- page 5-bis -->
                 <div id="page5-bis" class="content" style="display: none;">
-                    <h2 class="title-section">Les Ponts Inférieurs</h2>
+                    <h3 class="title-section">Les Ponts Inférieurs</h3>
 
                     <p class="paragraph-default">Ces niveaux souterrains contenaient les salles des machines, les chaudières, et les réserves de charbon. C’était le cœur technique du navire, inaccessible aux passagers.</p>
 
@@ -226,29 +242,30 @@
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05.svg">2eme classe</li>
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05.svg">3eme classe</li>
                     </ul>
+                </div>
             </div>
 
 
             <!-- version desktop -->
             <div class="desktop">
-                <h1 class="title-big">Survivre au Titanic : Mode d’emploi </h1>
-                <h2 class="title-section">Pont Supérieur et Sécurité</h2>
+                <h2 class="title-big">Survivre au Titanic : Mode d’emploi </h2>
+                <h3 class="title-section">Pont Supérieur et Sécurité</h3>
                 <p class="paragraph-default">Ces ponts comprenaient la promenade de première classe, le fumoir, ainsi que les canots de sauvetage. La passerelle de commandement et la salle radio étaient situées ici, servant à la navigation et aux communications.</p>
                 <img src="assets/images/Plan_3-4-01.svg" class="img--schema" alt="Partie 1 du schéma du Titanic">
                 
                 <img src="assets/images/Plan_3-4-02.svg" class="img--schema" alt="Partie 2 du schéma du Titanic">
-                <h2 class="title-section">Luxe et Première Classe</h2>
+                <h3 class="title-section">Luxe et Première Classe</h3>
                 <p class="paragraph-default">Ces ponts étaient réservés aux passagers les plus fortunés, avec des suites luxueuses, le restaurant à la carte, le Café Parisien et d’autres services prestigieux. Le bureau du commissaire de bord se trouvait aussi ici.</p>
                 
-                <h2 class="title-section">Espaces Mixtes et Seconde Classe</h2>
+                <h3 class="title-section">Espaces Mixtes et Seconde Classe</h3>
                 <p class="paragraph-default">Ces niveaux mélangeaient les cabines de première, deuxième et troisième classe. On y trouvait aussi la grande salle à manger de première classe, la salle à manger de seconde classe, ainsi que les accès aux ascenseurs et aux allées des stewards.</p>
                 <img src="assets/images/Plan_3-4-03.svg" class="img--schema" alt="Partie 3 du schéma du Titanic">
 
                 <img src="assets/images/Plan_3-4-04.svg" class="img--schema" alt="Partie 4 du schéma du Titanic">
-                <h2 class="title-section">Les Ponts Inférieurs</h2>
+                <h3 class="title-section">Les Ponts Inférieurs</h3>
                 <p class="paragraph-default">Ces ponts hébergeaient les cabines de troisième classe, une population majoritairement composée de familles et d’immigrants. On y trouvait aussi des services comme la salle à manger, les sanitaires, l’hôpital, ainsi que la piscine et les bains turcs.</p>
                 
-                <h2 class="title-section">Les Ponts Inférieurs</h2>
+                <h3 class="title-section">Les Ponts Inférieurs</h3>
                 <p class="paragraph-default">Ces niveaux souterrains contenaient les salles des machines, les chaudières, et les réserves de charbon. C’était le cœur technique du navire, inaccessible aux passagers.</p>
                 <img src="assets/images/Plan_3-4-05.svg" class="img--schema" alt="Partie 5 du schéma du Titanic">
             </div>
@@ -256,20 +273,25 @@
 
         <!-- section résultat ticket -->
         <section class="grid">
-            <h1 class="title-big">Des chiffres qui font froid dans le dos </h1>
-            <h2 class="title-section">La dernière note de l’orchestre s’est tue… Qu’en est-il de vous ? Avez-vous survécu ?</h2>
+            <h2 class="title-big">Des chiffres qui font froid dans le dos </h2>
+
+            <h3 class="title-small">La dernière note de l’orchestre s’est tue… Qu’en est-il de vous ? Avez-vous survécu ?</h3>
 
             <div class="ticket_result">
-                <h2 class="title-section">Blue star line</h2>
-                <img src="assets/images/titanic_tampon.svg" class="logo" alt="Tampon de Blue star line">
+                <h2 class="title-medium">Blue star line</h2>
 
                 <div class="result" id="result"></div>
+
                 <div class="result" id="survival-chance"></div>
+
+                <img src="assets/images/titanic_tampon.svg" class="logo" alt="Tampon de Blue star line">
             </div>
         </section>
 
         <!-- img background -->
-        <img src="assets/images/Icberg.svg" class="img--iceberg" alt="Illustration décorative d'un Iceberg">
+        <div>
+            <img src="assets/images/Icberg.svg" class="img--iceberg" alt="Illustration décorative d'un Iceberg">
+        </div>
 
         <!-- footer -->
         <footer id="footer">
