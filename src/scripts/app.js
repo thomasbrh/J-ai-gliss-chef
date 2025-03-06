@@ -91,6 +91,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+/* Animation du texte */
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animation pour les textes venant de la gauche
+    gsap.utils.toArray(".animated-text").forEach(element => {
+        gsap.fromTo(element, 
+            { x: -100, opacity: 0 },  // Départ à gauche
+            { 
+                x: 0, opacity: 1, 
+                duration: 1.5, 
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    });
+
+    // Animation pour les textes venant de la droite
+    gsap.utils.toArray(".animated-text-right").forEach(element => {
+        gsap.fromTo(element, 
+            { x: 100, opacity: 0 },  // Départ à droite
+            { 
+                x: 0, opacity: 1, 
+                duration: 1.5, 
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    });
+
+    console.log("Animations GSAP appliquées !");
+});
+
+
 
 /* Barre de progression */
 window.onscroll = function() {

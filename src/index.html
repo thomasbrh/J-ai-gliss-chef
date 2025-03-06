@@ -19,8 +19,12 @@
         <!-- link -->
         <link rel="icon" type="image/x-icon" href="assets/images/Icberg.svg">
         <link rel="stylesheet" href="styles/app.css">
-        <script src="scripts/app.js" defer></script>
+        <!-- script -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="scripts/app.js" defer></script>
+
         <!-- link Typos -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +39,7 @@
 
         <!-- header -->
         <header id="header">
-            <h1 class="title-big">Réservez votre ticket<br><span class="title-medium">pour le Titanic !</span></h1>
+            <h1 class="title-big animated-text">Réservez votre ticket<br><span class="title-medium">pour le Titanic !</span></h1>
             <img src="assets/images/illustration_titanic.svg" class="img--header" alt="Illustraion esthétique du Titanic en trait bleu">
         </header>
     
@@ -95,7 +99,7 @@
                 </fieldset>
             </form>
 
-            <h3 class="title-small">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h3>
+            <h3 class="title-small animated-text-right">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h3>
         </section>
 
 
@@ -103,7 +107,7 @@
         <section class="grid" id="informations">
             <!-- version mobile -->
             <div class="mobile">
-                <h2 class="title-big">Survivre au Titanic : Mode d’emploi </h2>
+                <h2 class="title-big animated-text">Survivre au Titanic : Mode d’emploi </h2>
                 <!-- page 1 mobile -->
                 <div id="page1--mobile" class="content">
                     <h3 class="title-section">Pont Supérieur et Sécurité</h3>
@@ -250,7 +254,7 @@
 
             <!-- version desktop -->
             <div class="desktop">
-                <h2 class="title-big">Survivre au Titanic : Mode d’emploi </h2>
+                <h2 class="title-big animated-text">Survivre au Titanic : Mode d’emploi </h2>
                 <!-- page 1 desktop -->
                 <div id="page1--desktop" class="content">
                     <h3 class="title-section">Pont Supérieur et Sécurité</h3>
@@ -397,9 +401,9 @@
 
         <!-- section résultat ticket -->
         <section class="grid">
-            <h2 class="title-big">Des chiffres qui font froid dans le dos </h2>
+            <h2 class="title-big animated-text">Des chiffres qui font froid dans le dos </h2>
 
-            <h3 class="title-small">La dernière note de l’orchestre s’est tue… Qu’en est-il de vous ? Avez-vous survécu ?</h3>
+            <h3 class="title-small animated-text-right">La dernière note de l’orchestre s’est tue… Qu’en est-il de vous ? Avez-vous survécu ?</h3>
 
             <div class="ticket_result">
                 <h2 class="title-medium">Blue star line</h2>
