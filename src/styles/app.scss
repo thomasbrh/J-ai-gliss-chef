@@ -150,6 +150,6 @@ img {
     display: none;
 
     @include responsive(desktop) {
-        display: block;
+        display: grid;
     }
 }
