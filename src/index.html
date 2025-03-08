@@ -43,8 +43,8 @@
             <img src="assets/images/illustration_titanic.svg" class="img--header" alt="Illustraion esthétique du Titanic en trait bleu">
         </header>
     
-        <!-- section ticket -->
-        <section class="grid ticket" id="ticket">
+        <!-- section ticket mobile -->
+        <section class="grid mobile ticket" id="ticket">
             <!-- form -->
             <form class="userForm" id="userForm">
                 <fieldset class="userField">
@@ -102,6 +102,64 @@
             <h3 class="title-small animated-text-right">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h3>
         </section>
 
+        <!-- section ticket ordi -->
+        <section class="grid desktop ticket" id="ticket">
+            <!-- form -->
+            <form class="userForm grid-start2 grid-end5" id="userForm">
+                <fieldset class="userField">
+                    <h2 class="title-medium">Blue star line</h2>
+            
+                    <!-- informations ticket -->
+                    <div class="grid-flex">
+                        <p class="paragraph-default" id="ticket-number">Ticket #</p>
+                        <p class="paragraph-default">Départ 10 Avril 1912</p>
+                    </div>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- prenom nom -->
+                    <label for="prenom-nom" class="userForm__label paragraph-default">Prénom et nom :</label>
+                    <input type="text" id="prenom-nom" placeholder="Votre prénom et nom" required>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- sexe -->
+                    <label for="sexe" class="userForm__label paragraph-default">Sexe :</label>
+                    <select id="sexe" required>
+                        <option value="" disabled selected>Choisissez votre sexe</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                    </select>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- age -->
+                    <label for="age" class="userForm__label paragraph-default">Age :</label>
+                    <input type="number" id="age" placeholder="Entrez votre age" required>
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- classe -->
+                    <p class="paragraph-default margin">Classe de transport :</p>
+                    <button type="button" class="btn btn-classe" value="1">1ère classe</button>
+                    <button type="button" class="btn btn-classe" value="2">2ème classe</button>
+                    <button type="button" class="btn btn-classe" value="3">3ème classe</button> 
+                </fieldset>
+
+                <fieldset class="userField">
+                    <!-- réserver -->
+                    <p class="paragraph-default margin">Destination : New York</p>
+
+                    <div class="grid-flex">
+                        <button type="submit" class="btn">Réserver</button>
+
+                        <img src="assets/images/Logo.svg" class="logo" alt="Logo de blue star line">
+                    </div>
+                </fieldset>
+            </form>
+
+            <h3 class="title-small animated-text-right grid-start2 grid-end5">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h3>
+        </section>
 
         <!-- section informations -->
         
@@ -254,7 +312,7 @@
 
             <!-- version desktop -->
             <div class="grid desktop ">
-                <h2 class="title-big animated-text">Survivre au Titanic : Mode d’emploi </h2>
+                <h2 class="title-big animated-text grid-start1 grid-end6">Survivre au Titanic : Mode d’emploi </h2>
                 <!-- page 1 desktop -->
                 <div id="page1--desktop" class="content grid-start1 grid-end3">
                     <h3 class="title-section ">Pont Supérieur et Sécurité</h3>
