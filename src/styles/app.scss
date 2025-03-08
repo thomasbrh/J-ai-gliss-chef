@@ -27,6 +27,7 @@ img {
 
     @include responsive(desktop) {
         right: 0;
+        height: 50dvh;
     }
 }
 
