@@ -14,10 +14,11 @@ footer {
     overflow-x: hidden;
 
     @include responsive(tablet) {
+        padding: 36px 108px;
     }
 
     @include responsive(desktop) {
-        padding: 40px 80px;
+        padding: 40px 160px;
     }
 }
 
@@ -38,13 +39,13 @@ footer {
 
 
 /* form */
-select, input, button {
+select, input, option, button {
     box-sizing: border-box;
     border: none;
     border-radius: 1em;
 }
 
-select, input {
+select, input, option {
     font-family: $font-secondary;
     width: 100%;
     padding: 1em;

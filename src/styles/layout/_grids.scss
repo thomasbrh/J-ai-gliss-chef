@@ -1,23 +1,22 @@
 /* grid */
 .grid {
     box-sizing: border-box;
-    padding: 16px;
+    padding: 0 16px;
     width: 100%;
     max-width: 100%;
     display: block;
 
     @include responsive(tablet) {
         display: grid;
-        padding: 0;
+        padding: 0 108px;
         justify-content: center;
-        grid-column-gap: 1em;
+        grid-column-gap: 2em;
         grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
-        padding: 48px;
     }
     
     @include responsive(desktop) {
         display: grid;
-        padding: 64px;
+        padding: 0 160px;
     }
 }
 
@@ -26,10 +25,9 @@
     width: 100%;
     max-width: 100%;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em;
+    grid-column-gap: 5em;
     margin-bottom: 5em;
     display: grid;
-
 }
 
 

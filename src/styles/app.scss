@@ -13,6 +13,34 @@
 
 /* L'IA a été utilisé pour de l'optimisation */
 
+.line-mobile::after {
+    position: relative;
+    content: " ";
+    display: block;
+    width: 20%;
+    height: 4px;
+    background-color: $color-tertiary;
+    border-radius: 1em;
+
+    @include responsive(tablet) {
+        display: none;
+    }
+}
+
+.line-desktop::before {
+
+    @include responsive(desktop) {
+        position: absolute;
+        content: "";
+        display: inline-block;
+        top: -10px;
+        left: 600px;
+        width: 10%;
+        height: 4px;
+        background-color: $color-tertiary;
+        border-radius: 1em;
+    }
+}
 /* img */
 img {
     width: 100%;
@@ -23,11 +51,11 @@ img {
 
 .img--header {
     position: relative;
-    height: 25dvh;
+    height: 40%;
 
     @include responsive(desktop) {
         right: 0;
-        height: 50dvh;
+        height: 60%;
     }
 }
 
@@ -58,6 +86,7 @@ img {
 .logo {
     width: 4em;
     max-width: 4em;
+    transform: scaleX(-1);
 }
 
 .rotate {
@@ -100,7 +129,7 @@ img {
         color: $color-primary;
     }
 
-    .selected {
+    .selected, option {
         background-color: $color-primary;
         color: $color-white;
     }
