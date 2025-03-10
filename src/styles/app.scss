@@ -25,6 +25,11 @@ img {
     position: relative;
     height: 25dvh;
 
+    @include responsive(tablet) {
+        right: 0;
+        height: 40dvh;
+    }
+    
     @include responsive(desktop) {
         right: 0;
         height: 50dvh;
@@ -93,6 +98,10 @@ img {
         color: white;
         border: none;
         cursor: pointer;
+    }
+
+    .btn.submit:hover{
+        background-color: $color-hover;
     }
 
     .btn-classe {
