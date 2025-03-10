@@ -64,8 +64,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .paragraph-default {
     font-family: $font-secondary;
-    font-size: $size-text;
-    margin-bottom: 1em;
+    font-size: 16px;
     color: $color-black;
     line-height: 1.6;
     max-width: 80ch;
@@ -74,10 +73,10 @@ h1, h2, h3, h4, h5, h6, p {
     @include responsive(tablet) {
         font-size: 18px;
     }
-
-    @include responsive(tablet) {
+    @include responsive(desktop) {
         font-size: 20px;
     }
+
 }
 .paragraph--footer {
     font-family: $font-secondary;
@@ -90,10 +89,10 @@ h1, h2, h3, h4, h5, h6, p {
     @include responsive(tablet) {
         font-size: 14px;
     }
-
     @include responsive(desktop) {
         font-size: 15px;
     }
+
 }
 
 

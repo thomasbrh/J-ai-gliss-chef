@@ -1,18 +1,12 @@
 /* fonts */
 $font-primary: 'Montagu Slab', sans-serif;
 $font-secondary: 'El Messiri', sans-serif;
-$size-text: 16px;
-@include responsive(tablet) {
-    $size-text: 18px;
-}
-@include responsive(desktop) {
-    $size-text: 24px;
-}
 
 /* couleurs */
 $color-bg: #F1EBDF;
 $color-white: #fff;
 $color-black: #000;
+$color-hover: #173387;
 
 $color-text: #333;
 $color-primary: #171636;
