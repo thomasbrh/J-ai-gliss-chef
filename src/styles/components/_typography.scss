@@ -13,10 +13,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .title-big {
-    font-size: 42px;
+    font-size: 38px;
     margin-bottom: 1em;
 
     @include responsive(tablet) {
+        font-size: 57px;
     }    
 
     @include responsive(desktop) {
@@ -29,10 +30,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 1em;
 
     @include responsive(tablet) {
+        font-size: 43px;
     }    
 
     @include responsive(desktop) {
-        font-size: 36px;
+        font-size: 47px;
     }
 }
 
@@ -41,6 +43,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 3em;
 
     @include responsive(tablet) {
+        font-size: 32px;
     }    
 
     @include responsive(desktop) {
@@ -49,10 +52,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .title-section {
-    font-size: 25px;
+    font-size: 21px;
     margin-bottom: 1em;
 
     @include responsive(tablet) {
+        font-size: 32px;
     }    
 
     @include responsive(desktop) {
@@ -73,7 +77,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 18px;
     }
     @include responsive(desktop) {
-        font-size: 24px;
+        font-size: 20px;
     }
 
 }
@@ -83,6 +87,14 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.6;
     text-align: center;
     color: $color-white;
+
+    @include responsive(tablet) {
+        font-size: 14px;
+    }
+    @include responsive(desktop) {
+        font-size: 11px;
+    }
+
 }
 
 
