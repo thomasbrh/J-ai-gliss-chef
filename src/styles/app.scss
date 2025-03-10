@@ -38,6 +38,10 @@ img {
     &:hover {
         transform: scale(1.05);
     }
+
+    @include responsive(desktop) {
+        width: 75%;
+    }
 }
 
 .img--iceberg {
