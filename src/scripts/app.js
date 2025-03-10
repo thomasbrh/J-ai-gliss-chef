@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 /* Importation de GSAP */
 import gsap from "gsap";
 
@@ -57,21 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Animation du résultat et des images */
 document.addEventListener("DOMContentLoaded", () => {
-    // Animation du résultat (.ticket_result)
-    let ticketResult = document.querySelector(".ticket_result");
-
-    if (ticketResult) {
-        gsap.to(ticketResult, {
-            scale: 1.05,
-            duration: 1.5,
-            ease: "sine.inOut",
-            repeat: -1, // Répétition infinie
-            yoyo: true
-        });
-    } else {
-        console.error("Élément .ticket_result non trouvé !");
-    }
-
     // Animation des images (.img--schema)
     let images = document.querySelectorAll(".img--schema");
 
@@ -235,7 +220,7 @@ form.addEventListener("submit", function(event) {
     if (!prenomNom || sexe === "" || isNaN(age) || age <= 0) {
         Swal.fire({
             title: "Erreur",
-            text: "⚠️ Veuillez remplir tous les champs correctement.",
+            text: "Veuillez remplir tous les champs correctement.",
             icon: "error",
             confirmButtonText: "OK"
         });
@@ -245,7 +230,7 @@ form.addEventListener("submit", function(event) {
     if (!classeElement) {
         Swal.fire({
             title: "Erreur",
-            text: "⚠️ Veuillez sélectionner une classe de transport.",
+            text: "Veuillez sélectionner une classe de transport.",
             icon: "warning",
             confirmButtonText: "OK"
         });
@@ -259,10 +244,10 @@ form.addEventListener("submit", function(event) {
     Swal.fire({
         title: "Confirmation de votre billet 🎟️",
         html: `
-            <p class="paragraph-default"><strong>Nom :</strong> ${prenomNom}</p>
-            <p class="paragraph-default"><strong>Classe :</strong> ${classe}</p>
-            <p class="paragraph-default"><strong>Destination :</strong> New York 🇺🇸</p>
-            <p class="paragraph-default">Votre billet a bien été enregistré. Bon voyage ! 🚢</p>
+            <p class="paragraph-default billet"><strong>Nom :</strong> ${prenomNom}</p>
+            <p class="paragraph-default billet"><strong>Classe :</strong> ${classe}</p>
+            <p class="paragraph-default billet"><strong>Destination :</strong> New York 🇺🇸</p>
+            <p class="paragraph-default billet">Votre billet a bien été enregistré. Bon voyage ! 🚢</p>
         `,
         icon: "success",
         confirmButtonText: "OK"

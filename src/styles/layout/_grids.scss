@@ -4,9 +4,10 @@
     padding: 16px;
     width: 100%;
     max-width: 100%;
-    display: grid;
+    display: block;
 
     @include responsive(tablet) {
+        display: grid;
         padding: 0;
         justify-content: center;
         grid-column-gap: 1em;
@@ -15,6 +16,7 @@
     }
     
     @include responsive(desktop) {
+        display: grid;
         padding: 64px;
     }
 }
