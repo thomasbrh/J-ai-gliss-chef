@@ -8,15 +8,15 @@
 
     @include responsive(tablet) {
         display: grid;
-        padding: 0 108px;
+        padding: 0 4em;
         justify-content: center;
         grid-column-gap: 2em;
-        grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
     }
     
     @include responsive(desktop) {
         display: grid;
-        padding: 0 160px;
+        padding: 0 8em;
+        grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
     }
 }
 

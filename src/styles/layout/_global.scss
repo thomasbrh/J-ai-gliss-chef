@@ -14,11 +14,11 @@ footer {
     overflow-x: hidden;
 
     @include responsive(tablet) {
-        padding: 36px 108px;
+        padding: 36px 4em;
     }
 
     @include responsive(desktop) {
-        padding: 40px 160px;
+        padding: 40px 8em;
     }
 }
 
