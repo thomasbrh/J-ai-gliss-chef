@@ -36,6 +36,10 @@
     grid-column: 1/-1;
 }
 
+.grid-full {
+    grid-column: 1/-1;
+}
+
 .grid-start1 {
     grid-column-start: 1;
 }  
@@ -48,9 +52,6 @@
 
 .grid-start5 {
     grid-column-start: 5;
-}
-.grid-start4 {
-    grid-column-start: 4;
 }
 
 .grid-end4 {
