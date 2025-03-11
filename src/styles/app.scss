@@ -83,11 +83,6 @@ img {
 
 .img--schema {
     margin-bottom: 4em;
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.05);
-    }
 
     @include responsive(desktop) {
         width: 75%;

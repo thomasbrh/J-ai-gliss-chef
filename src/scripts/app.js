@@ -330,3 +330,29 @@ function calculerSurvie(utilisateur) {
         survivalChanceDiv.innerHTML = `<p class="paragraph-default"><strong>Chances de survie :</strong> Données insuffisantes</p>`;
     }
 }
+
+//CHANGEMENT DE CURSEUR SUR HOVER//
+
+const body = document.body;
+const customCursor = document.querySelector('.custom-cursor');
+const imgschema = document.querySelector('.img--schema');
+
+function moveCursor(e) {
+  customCursor.style.top = `${e.clientY - 32}px`; // 32 c'est la moitié de la taille du curseur, pour le centrer, si tu veux que le "click" soit en haut à gauche, comme pour la souris, alors retire le 32
+  customCursor.style.left = `${e.clientX - 32}px`;
+}
+
+imgschema.addEventListener('mouseenter', () => {
+  customCursor.style.visibility = 'visible';
+  body.style.cursor = 'none';
+  imgschema.addEventListener('mousemove', moveCursor);
+});
+
+imgschema.addEventListener('mouseleave', (e) => {
+  if (!imgschema.contains(e.relatedTarget)) {
+    customCursor.style.visibility = 'hidden';
+    body.style.cursor = 'default';
+    imgschema.removeEventListener('mousemove', moveCursor);
+  }
+});
+ 
