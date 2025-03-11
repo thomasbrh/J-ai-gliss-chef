@@ -167,7 +167,7 @@ function showPage(pageId) {
 
     let targetPage = document.getElementById(pageVariant);
     if (targetPage) {
-        targetPage.style.display = "block";
+        targetPage.style.display = "grid";
         targetPage.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
         console.error(`⚠️ Erreur: L'élément avec l'ID '${pageVariant}' n'existe pas dans le DOM.`);

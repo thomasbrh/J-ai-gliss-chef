@@ -41,6 +41,23 @@
         border-radius: 1em;
     }
 }
+
+
+
+/* Legende */
+.legend {
+    width:max-content;
+    list-style: none;
+    background-color: $color-tertiary;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.legend-item {
+    cursor: pointer;
+}
+
+
 /* img */
 img {
     width: 100%;
@@ -77,16 +94,6 @@ img {
     }
 }
 
-.img--iceberg {
-    position: relative;
-    display: none;
-    z-index: -100;
-    top: 30px;
-
-    @include responsive(desktop) {
-        display:block;
-    }
-}
 
 .logo {
     width: 4em;
