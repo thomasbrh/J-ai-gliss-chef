@@ -141,33 +141,37 @@ function updateProgressBar() {
 window.showPage = showPage;
 
 function showPage(pageId) {
+    console.log(`Tentative d'affichage de la page: ${pageId}`);
+
+    // Détecter si on est en mode mobile ou desktop
+    let isMobile = window.innerWidth < 768;
+    let pageVariant = isMobile ? `${pageId}--mobile` : `${pageId}--desktop`;
+
+    console.log(`Affichage de : ${pageVariant}`);
+
     let isBisPage = pageId.includes('-bis');
 
     if (isBisPage) {
-        // Si on affiche une page "bis", cacher toutes les pages normales
         document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
             el.style.display = "none";
         });
     } else {
-        // Si on revient sur une page normale, réafficher toutes les pages normales
         document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
             el.style.display = "block";
         });
     }
 
-    // Masquer toutes les pages "bis"
     document.querySelectorAll('.content[id*="-bis"]').forEach(el => {
         el.style.display = "none";
     });
 
-    // Afficher uniquement la page demandée
-    let targetPage = document.getElementById(pageId);
+    let targetPage = document.getElementById(pageVariant);
     if (targetPage) {
         targetPage.style.display = "block";
+        targetPage.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+        console.error(`⚠️ Erreur: L'élément avec l'ID '${pageVariant}' n'existe pas dans le DOM.`);
     }
-
-    // Ajout du recentrage automatique sur la section
-    targetPage.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 
