@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.34 99.34">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f2f2f2;
+        font-family: MontaguSlab-Medium, 'Montagu Slab';
+        font-size: 19px;
+        font-variation-settings: 'wght' 500, 'opsz' 144;
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        letter-spacing: .01em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        fill: #173387;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-5" cx="49.67" cy="49.67" r="49.67"/>
+  <text class="cls-1" transform="translate(6.38 54.69) scale(.7)"><tspan x="0" y="0">CL</tspan><tspan class="cls-4" x="26.5" y="0">I</tspan><tspan x="33.55" y="0">CK</tspan></text>
+  <text class="cls-2" transform="translate(50 54.69)"><tspan x="0" y="0"> </tspan></text>
+  <text class="cls-1" transform="translate(54.03 54.69) scale(.7)"><tspan class="cls-3" x="0" y="0">H</tspan><tspan x="15.24" y="0">ERE</tspan></text>
+</svg>
