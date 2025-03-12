@@ -84,37 +84,42 @@ img {
 
 
 /* ticket */
-.userForm {
-    padding: 2em;
-    font-family: $font-secondary;
-    border-radius: 1em;
-    background: $color-tertiary;
-    margin-bottom: 6em;
+.ticket {
 
-    .userField {
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-
-    .userForm__label {
-        display: block;
-        margin-top: 1em;
-    }
-
-    .btn, .btn-classe { transition: background-color 0.3s ease; }
-
-    .btn {
-        @include button-style($color-primary, $color-white, $color-hover, $color-white);
-        cursor: pointer;
-        margin-top: 1em;
-        width: 100%;
-    }
-
-    .btn-classe {
-        @include button-style($color-white, $color-black, $color-hover, $color-white);
+    .userForm {
+        background: url("/assets/images/texture-propre.png") no-repeat center center;
+        background-size: cover;
+        padding: 2em;
+        font-family: $font-secondary;
+        border-radius: 1em;
+        margin-bottom: 6em;
+    
+        .userField {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    
+        .userForm__label {
+            display: block;
+            margin-top: 1em;
+        }
+    
+        .btn, .btn-classe { transition: background-color 0.3s ease; }
+    
+        .btn {
+            @include button-style($color-primary, $color-white, $color-hover, $color-white);
+            cursor: pointer;
+            margin-top: 1em;
+            width: 100%;
+        }
+    
+        .btn-classe {
+            @include button-style($color-white, $color-black, $color-hover, $color-white);
+        }
     }
 }
+
 
 /* Page */
 .btn-img {
@@ -141,9 +146,10 @@ img {
 .ticket_result, .box-result { @include common-box; }
 
 .ticket_result {
-   padding: 2em;
-   font-family: $font-secondary;
-   background: $color-tertiary;
+    background: url("/assets/images/texture-abimee.png") no-repeat center center;
+    background-size: cover;
+    padding: 2em;
+    font-family: $font-secondary;
 
     .result {
         margin: 1em auto;
