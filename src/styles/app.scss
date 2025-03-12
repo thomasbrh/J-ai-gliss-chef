@@ -19,6 +19,7 @@
     position: relative;
     content: "";
     display: block;
+    top: -1em;  
     width: 20%;
     height: 4px;
     background-color: $color-tertiary;
@@ -32,13 +33,14 @@
     content: "";
     display: block;
     top: -40px;
-    width: 50%;
+    width: 45%;
     height: 4px;
     background-color: #DFD4C1;
     border-radius: 1em;
 }
 .line-desktop--right {
-    
+    position: relative;
+    left: 55%;
 }
 
 
