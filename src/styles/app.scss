@@ -13,6 +13,8 @@
 
 /* L'IA a été utilisé pour de l'optimisation */
 
+/* line */
+//line for mobile
 .line-mobile::after {
     position: relative;
     content: "";
@@ -22,14 +24,11 @@
     background-color: $color-tertiary;
     border-radius: 1em;
 
-    @include responsive(tablet) {
-        display: none;
-    }
+    @include responsive(tablet) { width: 25%; }
 }
-
+// line for desktop
 .line-desktop::before {
-    @include responsive(desktop) {
-        position: absolute;
+        position: relative;
         content: "";
         display: block;
         top: -10px;
@@ -38,21 +37,6 @@
         height: 4px;
         background-color: $color-tertiary;
         border-radius: 1em;
-    }
-}
-
-
-/* Legende */
-.legend {
-    width:max-content;
-    list-style: none;
-    background-color: $color-tertiary;
-    padding: 1em;
-    border-radius: 1em;
-}
-
-.legend-item {
-    cursor: pointer;
 }
 
 
@@ -92,12 +76,9 @@ img {
     transform: scaleX(-1);
 }
 
-.rotate {
-    transform: rotate(90deg);
-}
+.rotate { transform: rotate(90deg); }
 
 
-/* form */
 /* ticket */
 .userForm {
     padding: 2em;
@@ -117,9 +98,7 @@ img {
         margin-top: 1em;
     }
 
-    .btn, .btn-classe {
-        transition: background-color 0.3s ease;
-    }
+    .btn, .btn-classe { transition: background-color 0.3s ease; }
 
     .btn {
         @include button-style($color-primary, $color-white, $color-hover, $color-white);
@@ -133,18 +112,33 @@ img {
     }
 }
 
+/* Page */
 .btn-img {
     cursor: pointer;
     background: transparent;
     border: none;
 }
- 
+
+ // Legende
+.legend {
+    width:max-content;
+    list-style: none;
+    background-color: $color-tertiary;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.legend-item {
+    cursor: pointer;
+}
+
 
 /* ticket's result */
+.ticket_result, .box-result { @include common-box; }
+
 .ticket_result {
    padding: 2em;
    font-family: $font-secondary;
-   border-radius: 1em;
    background: $color-tertiary;
 
     .result {
@@ -153,17 +147,9 @@ img {
     }
 
     .box-result {
-        margin-top: 1em;
-        padding: 1em;
-        border-radius: 1em;
         background-color: $color-white;
-        border: none;
-        cursor: pointer;
-
-        .paragraph-default {
-            color: $color-primary;
-            margin-bottom: 0;
-        }
+        
+        .paragraph-default { color: $color-primary; }
     }
 }
 
@@ -171,16 +157,10 @@ img {
 /* version */
 .mobile {
     display: block;
-
-    @include responsive(desktop) {
-        display: none;
-    }
+    @include responsive(desktop) { display: none; }
 }
 
 .desktop {
     display: none;
-
-    @include responsive(desktop) {
-        display: grid;
-    }
+    @include responsive(desktop) { display: grid; }
 }

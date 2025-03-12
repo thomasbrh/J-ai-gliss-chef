@@ -13,13 +13,9 @@ footer {
     padding: 16px;
     overflow-x: hidden;
 
-    @include responsive(tablet) {
-        padding: 36px 4em;
-    }
+    @include responsive(tablet) { padding: 36px 4em; }
 
-    @include responsive(desktop) {
-        padding: 40px 8em;
-    }
+    @include responsive(desktop) { padding: 40px 8em; }
 }
 
 header {
@@ -33,21 +29,16 @@ body {
 }
 
 footer {
-    background-color: $color-primary;
     display: flex;
-    justify-content: center;
+	justify-content: center;
+    background-color: $color-primary;
 }
 
 
 /* form */
-select, input, option, button {
+select, input, button, fieldset{
+    @include common-box;
     box-sizing: border-box;
-    border: none;
-    border-radius: 1em;
-}
-
-select, input, option {
     font-family: $font-secondary;
     width: 100%;
-    padding: 1em;
 }

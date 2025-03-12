@@ -1,6 +1,5 @@
 /* typographies */
 h1, h2, h3, h4, h5, h6, p {
-    color: $color-primary;
     margin: 0;
 }
 
@@ -8,17 +7,14 @@ h1, h2, h3, h4, h5, h6, p {
 .title-medium, 
 .title-small,
 .title-section {
+    color: $color-primary;
     font-family: $font-primary;
     line-height: 1.2;
 }
 
-.title-big {
-    @include font-size-responsive(38px, 57px, 63px);
-}
+.title-big { @include font-size-responsive(38px, 57px, 63px); }
 
-.title-medium {
-    @include font-size-responsive(28px, 43px, 47px);
-}
+.title-medium { @include font-size-responsive(28px, 43px, 47px); }
 
 .title-small {
     @include font-size-responsive(21px, 32px, 36px);
@@ -32,32 +28,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .paragraph-default {
     @include font-size-responsive(16px, 18px, 20px);
-    font-family: $font-secondary;
-    color: $color-black;
-    line-height: 1.6;
-    max-width: 75ch;
-    color: $color-black;
-
-    @include responsive(tablet) {
-        font-size: 18px;
-    }
-    @include responsive(desktop) {
-        font-size: 20px;
-    }
-
+    @include paragrpah ($color-black);
 }
 .paragraph--footer {
     @include font-size-responsive(12px, 14px, 15px);
-    font-family: $font-secondary;
-    margin-bottom: 1em;
-    line-height: 1.6;
+    @include paragrpah ($color-white);
     text-align: center;
-    color: $color-white;
-}
-
-
-/* figure */
-figure {
-    display: flex;
-    margin: 0;
 }

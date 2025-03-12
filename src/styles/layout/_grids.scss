@@ -18,14 +18,15 @@
     }
 }
 
+/* grid desktop */
 .grid-content {
+    display: grid;
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 5em;
     margin-bottom: 5em;
-    display: grid;
 }
 
 

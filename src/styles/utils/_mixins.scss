@@ -9,7 +9,6 @@
 		@media (min-width: 1280px) {@content;}
 	}
 }
-
 // texte responsive
 @mixin font-size-responsive($mobile, $tablet, $desktop) {
     font-size: $mobile;
@@ -26,4 +25,22 @@
     padding: 1em;
     cursor: pointer;
     &:hover { background-color: $bg-hover; color: $hover; }
+}
+
+
+/* box */
+@mixin common-box {
+    padding: 1em;
+    border: none;
+	border-radius: 1em;
+	margin-bottom: 1em;
+}
+
+
+/* paragrpah */
+@mixin paragrpah ($color-paragrpah) {
+	font-family: $font-secondary;
+	color : $color-paragrpah;
+	line-height: 1.6;
+	max-width: 75ch;
 }
