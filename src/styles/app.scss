@@ -27,16 +27,18 @@
     @include responsive(tablet) { width: 25%; }
 }
 // line for desktop
-.line-desktop::before {
-        position: relative;
-        content: "";
-        display: block;
-        top: -10px;
-        left: 600px;
-        width: 10%;
-        height: 4px;
-        background-color: $color-tertiary;
-        border-radius: 1em;
+.line-desktop::after {
+    position: relative;
+    content: "";
+    display: block;
+    top: -40px;
+    width: 50%;
+    height: 4px;
+    background-color: #DFD4C1;
+    border-radius: 1em;
+}
+.line-desktop--right {
+    
 }
 
 
