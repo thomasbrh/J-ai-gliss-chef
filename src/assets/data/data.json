@@ -6333,5 +6333,21 @@
             "Fare":36.75,
             "Cabin":null,
             "Embarked":"S"
+        },
+
+        {
+            "PassengerId":1341,
+            "Survived":1,
+            "Pclass":1,
+            "Name":"Lenox-Conyngham, Miss. Eileen ",
+            "Sex":"male",
+            "Age":11.0,
+            "SibSp":1,
+            "Parch":2,
+            "Ticket":"C.A. 33112",
+            "Fare":84.3,
+            "Cabin":null,
+            "Embarked":"S"
         }
+        
 ]
