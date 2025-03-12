@@ -48,6 +48,18 @@ img {
     margin: 0;
 }
 
+.custom-cursor{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url('../assets/images/cursor-click-here.svg');
+    background-size: cover;
+    border-radius: 50%;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1;
+}
+
 .img--header {
     position: relative;
     height: 40%;
@@ -64,7 +76,7 @@ img {
 }
 
 .img--schema {
-    cursor: pointer;
+    //cursor: pointer;
     margin-bottom: 4em;
     @include responsive(desktop) { width: 75%; }
 }
