@@ -19,22 +19,22 @@
     position: relative;
     content: "";
     display: block;
-    top: -1em;  
+    top: -1rem;  
     width: 20%;
     height: 4px;
     background-color: $color-tertiary;
-    border-radius: 1em;
+    border-radius: 1rem;
 }
 // line for desktop
 .line-desktop::after {
     position: relative;
     content: "";
     display: block;
-    top: -40px;
+    top: -2rem;
     width: 45%;
     height: 4px;
-    background-color: #DFD4C1;
-    border-radius: 1em;
+    background-color: $color-tertiary;
+    border-radius: 1rem;
 }
 .line-desktop--right {
     position: relative;
@@ -79,14 +79,14 @@ img {
 
 .img--schema {
     //cursor: pointer;
-    margin-bottom: 4em;
+    margin-bottom: 4rem;
     @include responsive(desktop) { width: 75%; }
 }
 
 
 .logo {
-    width: 4em;
-    max-width: 4em;
+    width: 4rem;
+    max-width: 4rem;
     transform: scaleX(-1);
 }
 
@@ -99,10 +99,10 @@ img {
     .userForm {
         background: url("/assets/images/texture-propre.png") no-repeat center center;
         background-size: cover;
-        padding: 2em;
+        padding: 2rem;
         font-family: $font-secondary;
-        border-radius: 1em;
-        margin-bottom: 6em;
+        border-radius: 1rem;
+        margin-bottom: 6rem;
     
         .userField {
             margin: 0;
@@ -112,7 +112,7 @@ img {
     
         .userForm__label {
             display: block;
-            margin-top: 1em;
+            margin-top: 1rem;
         }
     
         .btn, .btn-classe { transition: background-color 0.3s ease; }
@@ -120,7 +120,7 @@ img {
         .btn {
             @include button-style($color-primary, $color-white, $color-hover, $color-white);
             cursor: pointer;
-            margin-top: 1em;
+            margin-top: 1rem;
             width: 100%;
         }
     
@@ -137,16 +137,16 @@ img {
 /* Alerte billet */
 .swal2-popup {
     background: $color-bg;
-    border-radius: 1em;
-    padding: 1em;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 /* Bouton personnalisé */
 .swal2-confirm {
     background-color:$color-primary;
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 1em;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 /* Page */
@@ -161,8 +161,8 @@ img {
     width:max-content;
     list-style: none;
     background-color: $color-tertiary;
-    padding: 1em;
-    border-radius: 1em;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .legend-item {
@@ -176,12 +176,12 @@ img {
 .ticket_result {
     background: url("/assets/images/texture-abimee.png") no-repeat center center;
     background-size: cover;
-    padding: 2em;
+    padding: 2rem;
     font-family: $font-secondary;
 
     .result {
-        margin: 1em auto;
-        padding: 1em 0;
+        margin: 1rem auto;
+        padding: 1rem 0;
     }
 
     .box-result {

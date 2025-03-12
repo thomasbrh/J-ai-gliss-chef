@@ -3,6 +3,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
+.title-header,
 .title-big, 
 .title-medium, 
 .title-small,
@@ -12,18 +13,17 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 1.2;
 }
 
-.title-big { @include font-size-responsive(38px, 57px, 63px); }
+.title-header, .title-big { @include font-size-responsive(38px, 57px, 63px); }
+.title-big { margin-bottom: 4rem; }
 
 .title-medium { @include font-size-responsive(28px, 43px, 47px); }
 
-.title-small {
-    @include font-size-responsive(21px, 32px, 36px);
-    margin-bottom: 2em;
+.title-small, .title-section { @include font-size-responsive(21px, 32px, 36px); }
+.title-small { 
+    margin-bottom: 1rem;
 }
-
 .title-section {
-    @include font-size-responsive(21px, 32px, 36px);
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 .paragraph-default {

@@ -22,7 +22,7 @@
     background-color: $bg;
     color: $color;
     border: none;
-    padding: 1em;
+    padding: 1rem;
     cursor: pointer;
     &:hover { background-color: $bg-hover; color: $hover; }
 }
@@ -30,10 +30,10 @@
 
 /* box */
 @mixin common-box {
-    padding: 1em;
+    padding: 1rem;
     border: none;
-	border-radius: 1em;
-	margin-bottom: 1em;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
 }
 
 

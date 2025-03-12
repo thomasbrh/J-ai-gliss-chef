@@ -1,5 +1,6 @@
 /* global style */
 html {
+    @include font-size-responsive(16px, 18px, 20px); // initialisation de la taille de la police pour l'unité rem
     scroll-behavior: smooth;
 }
 
@@ -10,12 +11,12 @@ main {
 
 header, 
 footer {
-    padding: 16px;
+    padding: 1rem;
     overflow-x: hidden;
 
-    @include responsive(tablet) { padding: 36px 4em; }
+    @include responsive(tablet) { padding: 36px 4rem; }
 
-    @include responsive(desktop) { padding: 40px 8em; }
+    @include responsive(desktop) { padding: 40px 8rem; }
 }
 
 header {
