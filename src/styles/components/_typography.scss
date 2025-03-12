@@ -35,3 +35,10 @@ h1, h2, h3, h4, h5, h6, p {
     @include paragrpah ($color-white);
     text-align: center;
 }
+
+/* titre billet */
+.swal2-title {
+    @include font-size-responsive(21px, 32px, 36px);
+    font-family: $font-primary;
+    color: $color-primary;
+}

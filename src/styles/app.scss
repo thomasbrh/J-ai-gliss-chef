@@ -24,8 +24,6 @@
     height: 4px;
     background-color: $color-tertiary;
     border-radius: 1em;
-
-    @include responsive(tablet) { width: 25%; }
 }
 // line for desktop
 .line-desktop::after {
@@ -128,10 +126,28 @@ img {
     
         .btn-classe {
             @include button-style($color-white, $color-black, $color-hover, $color-white);
+            
+            &.selected {
+                background-color: $color-primary;
+                color: $color-white;
+            }
         }
     }
 }
+/* Alerte billet */
+.swal2-popup {
+    background: $color-bg;
+    border-radius: 1em;
+    padding: 1em;
+}
 
+/* Bouton personnalisé */
+.swal2-confirm {
+    background-color:$color-primary;
+    border-radius: 1em;
+    padding: 1em;
+    font-size: 1em;
+}
 
 /* Page */
 .btn-img {
@@ -178,7 +194,8 @@ img {
 
 /* version */
 .mobile {
-    display: block;
+    display: grid;
+    @include responsive(tablet) { display: grid; }
     @include responsive(desktop) { display: none; }
 }
 
