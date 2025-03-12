@@ -15,7 +15,7 @@
 
 .line-mobile::after {
     position: relative;
-    content: " ";
+    content: "";
     display: block;
     width: 20%;
     height: 4px;
@@ -28,11 +28,10 @@
 }
 
 .line-desktop::before {
-
     @include responsive(desktop) {
         position: absolute;
         content: "";
-        display: inline-block;
+        display: block;
         top: -10px;
         left: 600px;
         width: 10%;
@@ -41,11 +40,6 @@
         border-radius: 1em;
     }
 }
-
-
-
-
-
 
 
 /* Legende */
@@ -86,16 +80,9 @@ img {
 }
 
 .img--schema {
-    margin-bottom: 4em;
     cursor: pointer;
-
-    &:hover {
-        transform: scale(1.05);
-    }
-
-    @include responsive(desktop) {
-        width: 75%;
-    }
+    margin-bottom: 4em;
+    @include responsive(desktop) { width: 75%; }
 }
 
 
@@ -130,35 +117,26 @@ img {
         margin-top: 1em;
     }
 
-    .btn {
-        margin-top: 1em;
-        padding: 1em;
-        width: 100%;
-        background-color: $color-primary;
-        color: white;
-        border: none;
-        cursor: pointer;
+    .btn, .btn-classe {
+        transition: background-color 0.3s ease;
     }
 
-    .btn.submit:hover{
-        background-color: $color-hover;
+    .btn {
+        @include button-style($color-primary, $color-white, $color-hover, $color-white);
+        cursor: pointer;
+        margin-top: 1em;
+        width: 100%;
     }
 
     .btn-classe {
-        background-color: $color-white;
-        color: $color-primary;
-    }
-
-    .selected, option {
-        background-color: $color-primary;
-        color: $color-white;
+        @include button-style($color-white, $color-black, $color-hover, $color-white);
     }
 }
 
 .btn-img {
+    cursor: pointer;
     background: transparent;
     border: none;
-    cursor: pointer;
 }
  
 

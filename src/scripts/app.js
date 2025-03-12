@@ -1,4 +1,4 @@
- 'use strict';
+'use strict';
 /* Importation de GSAP */
 import gsap from "gsap";
 
@@ -157,7 +157,7 @@ function showPage(pageId) {
         });
     } else {
         document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
-            el.style.display = "block";
+            el.style.display = "grid";
         });
     }
 
@@ -180,7 +180,15 @@ function showPage(pageId) {
 document.querySelectorAll('.legend-item').forEach(item => {
     item.addEventListener('click', function() {
         const newSrc = this.getAttribute('data-src');
-        document.querySelectorAll('.schemaImage').forEach(img => img.src = newSrc);
+
+        // Trouver uniquement l'image visible
+        const activePage = document.querySelector('.content[style*="display: grid"]');
+        if (activePage) {
+            const activeImage = activePage.querySelector('.schemaImage');
+            if (activeImage) {
+                activeImage.src = newSrc;
+            }
+        }
     });
 });
 
@@ -332,7 +340,6 @@ function calculerSurvie(utilisateur) {
 }
 
 //CHANGEMENT DE CURSEUR SUR HOVER//
-
 const body = document.body;
 const customCursor = document.querySelector('.custom-cursor');
 const imgschema = document.querySelector('.img--schema');
@@ -355,4 +362,3 @@ imgschema.addEventListener('mouseleave', (e) => {
     imgschema.removeEventListener('mousemove', moveCursor);
   }
 });
- 

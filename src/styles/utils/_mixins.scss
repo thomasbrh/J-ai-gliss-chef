@@ -1,4 +1,5 @@
 /* mixins */
+/* responsive */
 @mixin responsive($breakpoint) {
 	@if $breakpoint == tablet {
 		@media (min-width: 768px) {@content;}
@@ -7,4 +8,22 @@
 	@else if $breakpoint == desktop {
 		@media (min-width: 1280px) {@content;}
 	}
+}
+
+// texte responsive
+@mixin font-size-responsive($mobile, $tablet, $desktop) {
+    font-size: $mobile;
+    @include responsive(tablet) { font-size: $tablet; }
+    @include responsive(desktop) { font-size: $desktop; }
+}
+
+
+/* button */
+@mixin button-style($bg, $color, $bg-hover, $hover) {
+    background-color: $bg;
+    color: $color;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    &:hover { background-color: $bg-hover; color: $hover; }
 }
