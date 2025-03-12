@@ -80,7 +80,7 @@ img {
 .img--schema {
     //cursor: pointer;
     margin-bottom: 4rem;
-    @include responsive(desktop) { width: 75%; }
+    @include responsive(desktop) { width: 75%; margin-bottom: 0;}
 }
 
 
@@ -99,10 +99,9 @@ img {
     .userForm {
         background: url("/assets/images/texture-propre.png") no-repeat center center;
         background-size: cover;
-        padding: 2rem;
+        padding: 3rem;
         font-family: $font-secondary;
         border-radius: 1rem;
-        margin-bottom: 6rem;
     
         .userField {
             margin: 0;
@@ -112,7 +111,7 @@ img {
     
         .userForm__label {
             display: block;
-            margin-top: 1rem;
+            margin: 1rem 0;
         }
     
         .btn, .btn-classe { transition: background-color 0.3s ease; }
@@ -120,22 +119,27 @@ img {
         .btn {
             @include button-style($color-primary, $color-white, $color-hover, $color-white);
             cursor: pointer;
-            margin-top: 1rem;
             width: 100%;
         }
     
         .btn-classe {
             @include button-style($color-white, $color-black, $color-hover, $color-white);
+            margin: 1rem 0;
             
             &.selected {
                 background-color: $color-primary;
                 color: $color-white;
             }
         }
+        .paragraph-default:first-child { margin-top: 1rem; }
+        .paragraph-default:last-child { margin-bottom: 1rem; }
+
+        .btn.submit { margin-top: 1rem; }
     }
 }
 /* Alerte billet */
 .swal2-popup {
+    @include font-size-responsive(16px, 18px, 20px);
     background: $color-bg;
     border-radius: 1rem;
     padding: 1rem;
@@ -176,19 +180,20 @@ img {
 .ticket_result {
     background: url("/assets/images/texture-abimee.png") no-repeat center center;
     background-size: cover;
-    padding: 2rem;
+    padding: 3rem;
     font-family: $font-secondary;
-
-    .result {
-        margin: 1rem auto;
-        padding: 1rem 0;
-    }
+    margin-top: 5rem;
+    @include font-size-responsive(16px, 18px, 20px);
 
     .box-result {
         background-color: $color-white;
-        
+        margin: 1rem 0;
+
         .paragraph-default { color: $color-primary; }
     }
+
+    .title-medium { margin-bottom: 2rem; }
+    .title-small { margin-bottom: 1rem; }
 }
 
 

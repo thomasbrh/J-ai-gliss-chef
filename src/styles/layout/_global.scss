@@ -2,6 +2,7 @@
 html {
     @include font-size-responsive(16px, 18px, 20px); // initialisation de la taille de la police pour l'unité rem
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 main {
@@ -14,9 +15,9 @@ footer {
     padding: 1rem;
     overflow-x: hidden;
 
-    @include responsive(tablet) { padding: 36px 4rem; }
+    @include responsive(tablet) { padding: 2rem 4rem; }
 
-    @include responsive(desktop) { padding: 40px 8rem; }
+    @include responsive(desktop) { padding: 2rem 8rem; }
 }
 
 header {
@@ -35,9 +36,14 @@ footer {
     background-color: $color-primary;
 }
 
+section {
+    margin-bottom: 10rem;
+    overflow-x: hidden;
+}
 
 /* form */
 select, input, button, fieldset{
+    @include font-size-responsive(16px, 18px, 20px);
     @include common-box;
     box-sizing: border-box;
     font-family: $font-secondary;

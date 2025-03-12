@@ -294,7 +294,7 @@ function afficherUtilisateur() {
     if (data) {
         let utilisateur = JSON.parse(data);
         resultDiv.innerHTML = `
-            <h3 class="title-small"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</h3>
+            <h3 class="title-small margin-reset"><strong>Prénom et nom :</strong> ${utilisateur.prenomNom}</h3>
             <div class="box-result"><p class="paragraph-default"><strong>Sexe :</strong> ${utilisateur.sexe}</p></div>
             <div class="box-result"><p class="paragraph-default"><strong>Âge :</strong> ${utilisateur.age}</p></div>
             <div class="box-result"><p class="paragraph-default"><strong>Classe de transport :</strong> ${utilisateur.classe}</p></div>

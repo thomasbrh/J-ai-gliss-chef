@@ -19,6 +19,7 @@
 
 /* button */
 @mixin button-style($bg, $color, $bg-hover, $hover) {
+	@include font-size-responsive(16px, 18px, 20px);
     background-color: $bg;
     color: $color;
     border: none;
@@ -33,7 +34,6 @@
     padding: 1rem;
     border: none;
 	border-radius: 1rem;
-	margin-bottom: 1rem;
 }
 
 

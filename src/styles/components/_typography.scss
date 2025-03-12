@@ -14,16 +14,16 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .title-header, .title-big { @include font-size-responsive(38px, 57px, 63px); }
-.title-big { margin-bottom: 4rem; }
-
 .title-medium { @include font-size-responsive(28px, 43px, 47px); }
+.title-big { margin-bottom: 5rem; }
+
 
 .title-small, .title-section { @include font-size-responsive(21px, 32px, 36px); }
 .title-small { 
-    margin-bottom: 1rem;
+    margin-top: 5rem;
 }
 .title-section {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .paragraph-default {
@@ -35,6 +35,11 @@ h1, h2, h3, h4, h5, h6, p {
     @include paragrpah ($color-white);
     text-align: center;
 }
+
+.margin-reset {
+    margin: 0;
+}
+
 
 /* titre billet */
 .swal2-title {
