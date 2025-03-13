@@ -143,9 +143,11 @@ window.showPage = showPage;
 function showPage(pageId) {
     console.log(`Tentative d'affichage de la page: ${pageId}`);
 
-    // Détecter si on est en mode mobile ou desktop
+    // Détecter si on est en mode mobile, tablette ou desktop
     let isMobile = window.innerWidth < 768;
-    let pageVariant = isMobile ? `${pageId}--mobile` : `${pageId}--desktop`;
+    let isTablet = window.innerWidth >= 768 && window.innerWidth <= 1280;
+    
+    let pageVariant = isMobile ? `${pageId}--mobile` : isTablet ? `${pageId}--mobile` : `${pageId}--desktop`;
 
     console.log(`Affichage de : ${pageVariant}`);
 
