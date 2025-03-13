@@ -352,7 +352,7 @@ function moveCursor(e) {
   customCursor.style.left = `${e.clientX - 32}px`;
 }
 
-if (window.innerWidth >= 768) {
+if (window.innerWidth >= 1280) {
     imgschema.forEach((img) => {
         img.addEventListener('mouseenter', () => {
             console.log('mouseenter');
@@ -372,26 +372,4 @@ if (window.innerWidth >= 768) {
         }
     });
 });
-}
-
-if (window.innerWidth <= 768) {
-    imgschema.forEach((img) => {
-        img.addEventListener('mouseenter', () => {
-            console.log('mouseenter');
-        customCursor.style.visibility = 'hidden';
-        body.style.cursor = 'default';
-        img.addEventListener('mousemove', moveCursor);
-        });
-    });
-
-    imgschema.forEach((img) => {
-        img.addEventListener('mouseleave', (e) => {
-            console.log('mouseleave');
-        if (!img.contains(e.relatedTarget)) {
-            customCursor.style.visibility = 'hidden';
-            body.style.cursor = 'default';
-            img.removeEventListener('mousemove', moveCursor);
-        }
-    });
-    });
 }
