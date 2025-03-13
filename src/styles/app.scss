@@ -19,26 +19,24 @@
     position: relative;
     content: "";
     display: block;
-    top: -1rem;  
-    width: 20%;
+    top: -2rem;  
+    width: 35%;
     height: 4px;
     background-color: $color-tertiary;
     border-radius: 1rem;
 }
 // line for desktop
 .line-desktop::after {
-    position: relative;
     content: "";
     display: block;
-    top: -2rem;
-    width: 45%;
+    margin-top: 3rem;
     height: 4px;
     background-color: $color-tertiary;
     border-radius: 1rem;
 }
 .line-desktop--right {
     position: relative;
-    left: 55%;
+    left: calc(100% + 4rem);
 }
 
 
@@ -97,7 +95,7 @@ img {
 .ticket {
 
     .userForm {
-        background: url("/assets/images/texture-propre.png") no-repeat center center;
+        background: url("/assets/images/texture-ticket.webp") no-repeat center center;
         background-size: cover;
         padding: 3rem;
         font-family: $font-secondary;
@@ -123,7 +121,7 @@ img {
         }
     
         .btn-classe {
-            @include button-style($color-white, $color-black, $color-hover, $color-white);
+            @include button-style($color-white, $color-primary, $color-hover, $color-white);
             margin: 1rem 0;
             
             &.selected {
@@ -131,7 +129,7 @@ img {
                 color: $color-white;
             }
         }
-        .paragraph-default:first-child { margin-top: 1rem; }
+        .paragraph-default:first-child { margin-top: 1rem; color: $color-primary;}
         .paragraph-default:last-child { margin-bottom: 1rem; }
 
         .btn.submit { margin-top: 1rem; }
@@ -178,7 +176,7 @@ img {
 .ticket_result, .box-result { @include common-box; }
 
 .ticket_result {
-    background: url("/assets/images/texture-abimee.png") no-repeat center center;
+    background: url("/assets/images/texture-ticket--result.webp") no-repeat center center;
     background-size: cover;
     padding: 3rem;
     font-family: $font-secondary;
