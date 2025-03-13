@@ -156,6 +156,8 @@ img {
     cursor: pointer;
     background: transparent;
     border: none;
+    padding: 0%;
+    width: 85%;
 }
 
  // Legende
@@ -169,7 +171,18 @@ img {
 
 .legend-item {
     cursor: pointer;
+    margin-top: 1rem; 
+    color: $color-primary;
+    padding: 0.5rem;
 }
+
+.legend-item:hover {
+    background-color: $color-hover;
+    padding: 0.5rem;
+    color: white; 
+    border-radius: 1rem;
+}
+
 
 
 /* ticket's result */
