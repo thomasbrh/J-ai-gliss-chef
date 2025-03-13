@@ -24,7 +24,7 @@ fetch("assets/data/data.json")
         titanicData = data;
     })
     .catch(error => {
-        console.error("Erreur lors du chargement des données", error);
+        console.error("❌ Erreur lors du chargement des données", error);
     });
 
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.set(ticket, { y: 0 }); // Remet le ticket à sa position d'origine
         }, { once: true }); // L'événement ne s'exécute qu'une seule fois
     } else {
-        console.error("Élément .ticket non trouvé !");
+        console.error("❌ Élément .ticket non trouvé !");
     }
 });
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             stagger: 0.1
         });
     } else {
-        console.error("Aucun élément .img--schema trouvé !");
+        console.error("❌ Aucun élément .img--schema trouvé !");
     }
 });
 
@@ -143,56 +143,107 @@ window.showPage = showPage;
 function showPage(pageId) {
     console.log(`Tentative d'affichage de la page: ${pageId}`);
 
-    // Détecter si on est en mode mobile, tablette ou desktop
+    // 🔹 Détecter la bonne version de la page selon la largeur d'écran
     let isMobile = window.innerWidth < 768;
-    let isTablet = window.innerWidth >= 768 && window.innerWidth <= 1280;
-    
-    let pageVariant = isMobile ? `${pageId}--mobile` : isTablet ? `${pageId}--mobile` : `${pageId}--desktop`;
+    let isTablet = window.innerWidth >= 768 && window.innerWidth < 1280;
+    let pageVariant = isMobile || isTablet ? `${pageId}--mobile` : `${pageId}--desktop`;
 
-    console.log(`Affichage de : ${pageVariant}`);
+    console.log(`Page détectée : ${pageVariant}`);
+
+    let targetPage = document.getElementById(pageVariant);
+
+    if (!targetPage) {
+        console.error(`❌ ERREUR : L'élément avec l'ID '${pageVariant}' est introuvable.`);
+        return;
+    }
 
     let isBisPage = pageId.includes('-bis');
 
     if (isBisPage) {
-        document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
-            el.style.display = "none";
-        });
-    } else {
-        document.querySelectorAll('.content:not([id*="-bis"])').forEach(el => {
-            el.style.display = "grid";
-        });
-    }
+        console.log("Page-bis détectée, masquage du reste du site.");
 
-    document.querySelectorAll('.content[id*="-bis"]').forEach(el => {
-        el.style.display = "none";
-    });
+        // Masquer tous les enfants directs de `body` SAUF ceux qui contiennent la page-bis
+        document.querySelectorAll("body > *").forEach(el => {
+            if (!el.contains(targetPage)) el.classList.add("hidden");
+        });
 
-    let targetPage = document.getElementById(pageVariant);
-    if (targetPage) {
-        targetPage.style.display = "grid";
+        // Cacher toutes les autres pages-bis sauf la cible
+        document.querySelectorAll('.content').forEach(el => {
+            el.style.display = (el === targetPage) ? "grid" : "none";
+            el.classList.toggle("hidden", el !== targetPage);
+        });
+
+        console.log("Page-bis affichée avec succès.");
         targetPage.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        // Réactiver le curseur si caché
+        let customCursor = document.querySelector('.custom-cursor');
+        if (customCursor) {
+            customCursor.style.display = "block";
+            customCursor.classList.remove("hidden");
+        }
+
     } else {
-        console.error(`⚠️ Erreur: L'élément avec l'ID '${pageVariant}' n'existe pas dans le DOM.`);
+        console.log("Retour à une page normale, réaffichage du site.");
+
+        // Réafficher tout le contenu normal et cacher les pages-bis
+        document.querySelectorAll("body > *").forEach(el => el.classList.remove("hidden"));
+
+        document.querySelectorAll('.content').forEach(el => {
+            el.style.removeProperty("display");
+            el.classList.remove("hidden");
+            if (el.id.includes('-bis--mobile') || el.id.includes('-bis--desktop')) {
+                el.style.display = "none";
+            }
+        });
+
+        console.log("✅ Tout est réaffiché normalement.");
     }
+
+    console.log(`✅ Page affichée : ${pageVariant}`);
+    attachLegendEvents(); // Pas besoin de `setTimeout`
 }
 
+/* Gestion des événements de la légende */
+function attachLegendEvents() {
+    console.log("Réactivation de la légende interactive...");
 
-
-/* Changement d'image */
-document.querySelectorAll('.legend-item').forEach(item => {
-    item.addEventListener('click', function() {
-        const newSrc = this.getAttribute('data-src');
-
-        // Trouver uniquement l'image visible
-        const activePage = document.querySelector('.content[style*="display: grid"]');
-        if (activePage) {
-            const activeImage = activePage.querySelector('.schemaImage');
-            if (activeImage) {
-                activeImage.src = newSrc;
-            }
-        }
+    document.querySelectorAll(".legend-item").forEach(img => {
+        img.removeEventListener("click", changeMainImage); // Évite les doublons
+        img.addEventListener("click", changeMainImage);
     });
-});
+
+    console.log("✅ Légende interactive mise à jour !");
+}
+
+// Fonction qui change l'image principale
+function changeMainImage(event) {
+    let clickedItem = event.currentTarget;
+    console.log("Image cliquée :", clickedItem);
+
+    // Supprime la classe "active" de toutes les images
+    document.querySelectorAll(".legend-item").forEach(el => el.classList.remove("active"));
+    clickedItem.classList.add("active");
+
+    console.log("Recherche de l'image principale dans la page active...");
+
+    // Trouver uniquement l'image visible DANS la page active
+    const activePage = document.querySelector('.content:not(.hidden)');
+    let mainImage = activePage?.querySelector('.schemaImage');
+
+    if (!mainImage) {
+        console.error("❌ ERREUR : L'image principale `.schemaImage` est introuvable dans la page active !");
+        return;
+    }
+
+    let newSrc = clickedItem.dataset.src;
+    if (newSrc) {
+        mainImage.src = newSrc;
+        console.log("Image principale mise à jour :", mainImage.src);
+    } else {
+        console.error("❌ ERREUR : `data-src` est manquant sur l'élément cliqué !");
+    }
+}
 
 
 

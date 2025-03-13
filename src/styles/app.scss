@@ -13,6 +13,12 @@
 
 /* L'IA a été utilisé pour de l'optimisation */
 
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
 /* line */
 //line for mobile
 .line-mobile::after {
