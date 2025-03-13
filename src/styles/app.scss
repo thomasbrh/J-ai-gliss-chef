@@ -18,6 +18,19 @@
     visibility: hidden !important;
 }
 
+/*empêche l'accès au site tant que le formulaire est pas rempli*/
+.hidden-submit{
+    display: none;
+}
+
+.centered-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80dvh;
+    text-align: center;
+}
+
 
 /* line */
 //line for mobile
@@ -224,9 +237,4 @@ img {
 .desktop {
     display: none;
     @include responsive(desktop) { display: grid; }
-}
-
-/*empêche l'accès au site tant que le formulaire est pas rempli*/
-.hidden-submit{
-    display: none;
 }

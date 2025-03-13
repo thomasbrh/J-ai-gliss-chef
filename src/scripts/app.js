@@ -1,6 +1,9 @@
 'use strict';
 /* Importation de GSAP */
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 
 /* L'IA a été utilisée pour la création de ces scripts */
 
@@ -34,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let ticket = document.querySelector(".ticket");
 
     if (ticket) {
+
         // Animation de flottement plus fluide et plus haute
         let floatingAnimation = gsap.to(ticket, {
             y: -30,
@@ -57,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* Animation du résultat et des images */
 document.addEventListener("DOMContentLoaded", () => {
+
     // Animation des images (.img--schema)
     let images = document.querySelectorAll(".img--schema");
 
@@ -140,10 +145,21 @@ function updateProgressBar() {
 /* Changement de section/plan */
 window.showPage = showPage;
 
+// récupérer les boutons pour target au retour
+document.querySelectorAll(".btn-img").forEach(button => {
+    button.addEventListener("click", function (event) {
+        let img = event.currentTarget.querySelector("img");
+        if (img) {
+            sessionStorage.setItem("lastClickedButton", img.src);
+            console.log("Bouton enregistré :", img.src); // Debug
+        }
+    });
+});
+
 function showPage(pageId) {
     console.log(`Tentative d'affichage de la page: ${pageId}`);
 
-    // 🔹 Détecter la bonne version de la page selon la largeur d'écran
+    // Détecter la bonne version de la page selon la largeur d'écran
     let isMobile = window.innerWidth < 768;
     let isTablet = window.innerWidth >= 768 && window.innerWidth < 1280;
     let pageVariant = isMobile || isTablet ? `${pageId}--mobile` : `${pageId}--desktop`;
@@ -161,6 +177,13 @@ function showPage(pageId) {
 
     if (isBisPage) {
         console.log("Page-bis détectée, masquage du reste du site.");
+
+        // Sauvegarder l'élément cliqué avant d'aller sur une page-bis
+        document.querySelectorAll(".btn-img").forEach(button => {
+            button.addEventListener("click", function (event) {
+                sessionStorage.setItem("lastClickedButton", event.currentTarget.dataset.src || ""); 
+            });
+        });
 
         // Masquer tous les enfants directs de `body` SAUF ceux qui contiennent la page-bis
         document.querySelectorAll("body > *").forEach(el => {
@@ -197,12 +220,26 @@ function showPage(pageId) {
             }
         });
 
+        // Récupérer l'élément cliqué avant d'aller sur une page-bis
+        let lastClickedButtonSrc = sessionStorage.getItem("lastClickedButton");
+
+        if (lastClickedButtonSrc) {
+            let lastClickedButton = document.querySelector(`.btn-img img[src="${lastClickedButtonSrc}"]`);
+            
+            if (lastClickedButton) {
+                gsap.to(window, { duration: 1, scrollTo: lastClickedButton }); // Scroll fluide avec GSAP
+                sessionStorage.removeItem("lastClickedButton"); // Nettoyer après utilisation
+            }
+        }
+
         console.log("✅ Tout est réaffiché normalement.");
     }
 
     console.log(`✅ Page affichée : ${pageVariant}`);
-    attachLegendEvents(); // Pas besoin de `setTimeout`
+    attachLegendEvents();
 }
+
+
 
 /* Gestion des événements de la légende */
 function attachLegendEvents() {
@@ -215,7 +252,6 @@ function attachLegendEvents() {
 
     console.log("✅ Légende interactive mise à jour !");
 }
-
 // Fonction qui change l'image principale
 function changeMainImage(event) {
     let clickedItem = event.currentTarget;
@@ -292,6 +328,7 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
+    // Warning si la classe n'est pas sélectionnée
     if (!classeElement) {
         Swal.fire({
             title: "Erreur",
@@ -334,7 +371,7 @@ form.addEventListener("submit", function(event) {
     afficherUtilisateur();
     calculerSurvie(utilisateur);
 });
-
+// Récupérer les données sauvegardées et les afficher dans la div result
 function afficherUtilisateur() {
     const resultDiv = document.getElementById("result");
 
@@ -355,7 +392,9 @@ function afficherUtilisateur() {
     }
 }
 
-// Charger les données sauvegardées au chargement de la page
+
+
+/* Charger les données sauvegardées au chargement de la page */
 afficherUtilisateur();
 
 function calculerSurvie(utilisateur) {
@@ -392,7 +431,9 @@ function calculerSurvie(utilisateur) {
     }
 }
 
-//CHANGEMENT DE CURSEUR SUR HOVER//
+
+
+/* Curseur personnalisé sur l'état hover des img--schema */
 const body = document.body;
 const customCursor = document.querySelector('.custom-cursor');
 const imgschema = document.querySelectorAll('.img--schema');
@@ -425,8 +466,7 @@ if (window.innerWidth >= 1280) {
 });
 }
 
-//EMPÊCHE L'UTILISATEUR D'AVOIR ACCÈS AU SITE SANS AVOIR REMPLI LE FORMULAIRE//
-
+/* Cache le reste du site tant que le formulaire n'est pas envoyer */
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.userForm');
     const hiddenElements = document.querySelectorAll('.hidden-submit');
@@ -443,6 +483,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.addEventListener('submit', function(event) {
         event.preventDefault();
+        
         // Ajoutez ici votre logique de validation du formulaire
         const isFormValid = form.checkValidity(); // Utilisation de la validation HTML5
 
@@ -451,6 +492,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.classList.remove('hidden-submit');
             });
             form.style.display = 'none'; // Masquer le formulaire après soumission
+            const header = document.getElementById("header"); // Cacher le header et le ticket après soumission du formulaire
+            const ticket = document.querySelector(".ticket");
+
+            if (header) header.style.display = "none";
+            if (ticket) ticket.style.display = "none";
+
+            // Cibler la phrase et faire défiler la page jusqu'à elle
+            if (!sessionStorage.getItem("lastClickedButton")) { // Vérifie qu'aucun bouton n'a été cliqué récemment
+                const welcomeMessage = document.querySelector(".title-small.animated-text-right.grid-start2.grid-end5");
+                if (welcomeMessage) {
+                    welcomeMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            }
         } else {
             form.reportValidity(); // Affiche les messages de validation HTML5
         }
