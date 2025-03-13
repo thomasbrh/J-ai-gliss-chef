@@ -32,6 +32,7 @@
     </head>
 
     <body> 
+        
         <div class="custom-cursor"></div>
         <!-- progress bar -->
         <div id="progress-bar-container">
@@ -99,13 +100,17 @@
                     </div>
                 </fieldset>
             </form>
-
+        
+            <div id="main-content" class="hidden-submit">
             <h3 class="title-small animated-text-right grid-start2 grid-end5">Vous êtes officiellement passager du Titanic. Profitez du voyage. La mer est calme… pour l’instant.</h3>
+            </div>
         </section>
 
         <!-- section informations -->
         
             <!-- version mobile -->
+            
+            <div id="main-content" class="hidden-submit">
             <div class="mobile grid">
                 <h2 class="title-big animated-text">Survivre au Titanic : Mode d’emploi </h2>
 
@@ -150,6 +155,12 @@
                     
                     <!-- légende -->
                     <p class="paragraph-default">Légende :</p>
+
+                    <ul >
+                        <li class="paragraph-default">Points Bleu = Survivant</li>
+                        <li class="paragraph-default">Points Noir = Victime</li>
+                   </ul>
+
                     <ul class="legend">
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-02--hommes.svg">Homme</li>
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-02--femmes.svg">Femmes</li>
@@ -178,6 +189,12 @@
                     
                     <!-- légende -->
                     <p class="paragraph-default">Légende :</p>
+
+                    <ul >
+                        <li class="paragraph-default">Points Bleu = Survivant</li>
+                        <li class="paragraph-default">Points Noir = Victime</li>
+                   </ul>
+
                     <ul class="legend">
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-03--hommes.svg">Homme</li>
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-03--femmes.svg">Femmes</li>
@@ -207,6 +224,12 @@
                     
                     <!-- légende -->
                     <p class="paragraph-default">Légende :</p>
+
+                    <ul >
+                        <li class="paragraph-default">Points Bleu = Survivant</li>
+                        <li class="paragraph-default">Points Noir = Victime</li>
+                   </ul>
+
                     <ul class="legend">
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--hommes.svg">Homme</li>
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--femmes.svg">Femmes</li>
@@ -237,6 +260,12 @@
 
                     <!-- légende -->
                     <p class="paragraph-default">Légende :</p>
+
+                    <ul >
+                        <li class="paragraph-default">Points Bleu = Survivant</li>
+                        <li class="paragraph-default">Points Noir = Victime</li>
+                   </ul>
+                   
                     <ul class="legend">
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--hommes.svg">Homme</li>
                         <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--femmes.svg">Femmes</li>
@@ -246,9 +275,11 @@
                     </ul>
                 </div>
             </div>
+            </div>
 
 
             <!-- version desktop -->
+            <div id="main-content" class="hidden-submit">
             <div class="desktop grid">
                 <h2 class="title-big animated-text grid-start1 grid-end6">Survivre au Titanic : Mode d’emploi </h2>
 
@@ -369,7 +400,7 @@
                     <button class="btn-img grid-start1" onclick="showPage('page4-bis')"><img src="assets/images/Plan_3-4-04.svg" class="img--schema schemaImage" alt="Partie 4 du schéma du Titanic"></button>
 
                     <div>
-                        <h3 class="title-section grid-start2">Les Ponts Inférieurs</h3>
+                        <h3 class="title-section grid-start2">Les Ponts D et E</h3>
 
                         <p class="paragraph-default grid-start2">Les Ponts D et E du Titanic alliaient restauration, hébergement et loisirs. Le Pont D, ou Saloon Deck, abritait les grandes salles à manger des différentes classes ainsi que le somptueux Grand Escalier, symbole du luxe du paquebot. Juste en dessous, le Pont E, ou Upper Deck, regroupait des cabines de première et troisième classe, ainsi que des espaces de loisirs comme une piscine et un terrain de squash. Ces ponts offraient à la fois confort et divertissement aux passagers du Titanic.</p>
                     </div>
@@ -379,21 +410,35 @@
 
                 <!-- page 4-bis desktop -->
                 <div id="page4-bis--desktop" class="content" style="display: none;">
-                    <h3 class="title-section">Les Ponts Inférieurs</h3>
+
+                    <div class="grid-flex-legende">
+                        <button class="btn-img" onclick="showPage('page4')"><img src="assets/images/Plan_haut-04.svg" class="img--schema schemaImage" alt="Partie 4 du schéma du Titanic"></button>
+
+                        <ul class="legend">
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--hommes.svg">Homme</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--femmes.svg">Femmes</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--enfants.svg">Enfants</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--1ere-classe.svg">2eme classe</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--3eme-classe.svg">3eme classe</li>
+                        </ul>
+
+                    </div>
+                    
+                    <!-- légende -->
+                     
+                    <p class="paragraph-default">Légende :</p>
+
+                    <ul >
+                        <li class="paragraph-default">Points Bleu = Survivant</li>
+                        <li class="paragraph-default">Points Noir = Victime</li>
+                   </ul>
+
+                    
+
+                    <h3 class="title-section">Les Ponts D et E</h3>
 
                     <p class="paragraph-default">Ces ponts hébergeaient les cabines de troisième classe, une population majoritairement composée de familles et d’immigrants. On y trouvait aussi des services comme la salle à manger, les sanitaires, l’hôpital, ainsi que la piscine et les bains turcs.</p>
 
-                    <button class="btn-img" onclick="showPage('page4')"><img src="assets/images/Plan_haut-04.svg" class="img--schema schemaImage" alt="Partie 4 du schéma du Titanic"></button>
-                    
-                    <!-- légende -->
-                    <p class="paragraph-default">Légende :</p>
-                    <ul class="legend">
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--hommes.svg">Homme</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--femmes.svg">Femmes</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--enfants.svg">Enfants</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--1ere-classe.svg">2eme classe</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-04--3eme-classe.svg">3eme classe</li>
-                    </ul>
                 </div>
             
                 <!-- page 5 desktop -->
@@ -409,26 +454,40 @@
                 </div>
 
                 <!-- page 5-bis desktop -->
-                <div id="page5-bis--desktop" class="content" style="display: none;">
+                <div id="page5-bis--desktop" class="content" style="display:none;">
+
+                    <div class="grid-flex-legende">
+
+                        <button class="btn-img" onclick="showPage('page5')"><img src="assets/images/Plan_haut-05.svg" class="img--schema schemaImage" alt="Partie 5 du schéma du Titanic"></button>
+
+                        <ul class="legend">
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--hommes.svg">Homme</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--femmes.svg">Femmes</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--enfants.svg">Enfants</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--2eme-classe.svg">2eme classe</li>
+                            <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--3eme-classe.svg">3eme classe</li>
+                        </ul>
+
+                    </div>
+
+                    <!-- légende -->
+                    <p class="paragraph-default">Légende :</p>
+
+                    <ul >
+                        <li class="paragraph-default">Points Bleu = Survivant</li>
+                        <li class="paragraph-default">Points Noir = Victime</li>
+                   </ul>
+
                     <h3 class="title-section">Les Ponts Inférieurs</h3>
 
                     <p class="paragraph-default">Ces niveaux souterrains contenaient les salles des machines, les chaudières, et les réserves de charbon. C’était le cœur technique du navire.</p>
 
-                    <button class="btn-img" onclick="showPage('page5')"><img src="assets/images/Plan_haut-05.svg" class="img--schema schemaImage" alt="Partie 5 du schéma du Titanic"></button>
-
-                    <!-- légende -->
-                    <p class="paragraph-default">Légende :</p>
-                    <ul class="legend">
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--hommes.svg">Homme</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--femmes.svg">Femmes</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--enfants.svg">Enfants</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--2eme-classe.svg">2eme classe</li>
-                        <li class="legend-item paragraph-default" data-src="assets/images/Plan_haut-05--3eme-classe.svg">3eme classe</li>
-                    </ul>
                 </div>
+            </div>
             </div>
         
         <!-- section résultat ticket -->
+        <div id="main-content" class="hidden-submit">
         <section class="grid">
             <h2 class="title-big animated-text grid-start1 grid-end5">Des chiffres qui font froid dans le dos </h2>
 
@@ -442,6 +501,7 @@
                 <div class="result" id="survival-chance"></div>
             </div>
         </section>
+        </div>
 
         <!-- footer -->
         <footer id="footer">
