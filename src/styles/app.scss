@@ -95,7 +95,7 @@ img {
 .ticket {
 
     .userForm {
-        background: url("/assets/images/texture-ticket.webp") no-repeat center center;
+        background: url("../assets/images/texture-ticket.webp") no-repeat center center;
         background-size: cover;
         padding: 3rem;
         font-family: $font-secondary;
@@ -176,7 +176,7 @@ img {
 .ticket_result, .box-result { @include common-box; }
 
 .ticket_result {
-    background: url("/assets/images/texture-ticket--result.webp") no-repeat center center;
+    background: url("../assets/images/texture-ticket--result.webp") no-repeat center center;
     background-size: cover;
     padding: 3rem;
     font-family: $font-secondary;
