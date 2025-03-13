@@ -373,3 +373,35 @@ if (window.innerWidth >= 1280) {
     });
 });
 }
+
+//EMPÊCHE L'UTILISATEUR D'AVOIR ACCÈS AU SITE SANS AVOIR REMPLI LE FORMULAIRE//
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.userForm');
+    const hiddenElements = document.querySelectorAll('.hidden-submit');
+
+    if (!form) {
+        console.error("Erreur : Impossible de trouver le formulaire avec la classe 'userForm' !");
+        return;
+    }
+
+    if (hiddenElements.length === 0) {
+        console.error("Erreur : Aucun élément avec la classe 'hidden-submit' trouvé !");
+        return;
+    }
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Ajoutez ici votre logique de validation du formulaire
+        const isFormValid = form.checkValidity(); // Utilisation de la validation HTML5
+
+        if (isFormValid) {
+            hiddenElements.forEach(element => {
+                element.classList.remove('hidden-submit');
+            });
+            form.style.display = 'none'; // Masquer le formulaire après soumission
+        } else {
+            form.reportValidity(); // Affiche les messages de validation HTML5
+        }
+    });
+});

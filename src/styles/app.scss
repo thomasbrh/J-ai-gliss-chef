@@ -219,3 +219,8 @@ img {
     display: none;
     @include responsive(desktop) { display: grid; }
 }
+
+/*empêche l'accès au site tant que le formulaire est pas rempli*/
+.hidden-submit{
+    display: none;
+}
