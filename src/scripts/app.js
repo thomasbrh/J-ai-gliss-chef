@@ -178,12 +178,8 @@ function showPage(pageId) {
     if (isBisPage) {
         console.log("Page-bis détectée, masquage du reste du site.");
 
-        // Sauvegarder l'élément cliqué avant d'aller sur une page-bis
-        document.querySelectorAll(".btn-img").forEach(button => {
-            button.addEventListener("click", function (event) {
-                sessionStorage.setItem("lastClickedButton", event.currentTarget.dataset.src || ""); 
-            });
-        });
+        // Sauvegarder la position de scroll actuelle
+        sessionStorage.setItem("scrollPosition", window.scrollY);
 
         // Masquer tous les enfants directs de `body` SAUF ceux qui contiennent la page-bis
         document.querySelectorAll("body > *").forEach(el => {
@@ -195,6 +191,12 @@ function showPage(pageId) {
             el.style.display = (el === targetPage) ? "grid" : "none";
             el.classList.toggle("hidden", el !== targetPage);
         });
+
+        // Focus on the first button in the target page
+        const firstButton = targetPage.querySelector('button');
+        if (firstButton) {
+            firstButton.focus();
+        }
 
         console.log("Page-bis affichée avec succès.");
         targetPage.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -220,16 +222,11 @@ function showPage(pageId) {
             }
         });
 
-        // Récupérer l'élément cliqué avant d'aller sur une page-bis
-        let lastClickedButtonSrc = sessionStorage.getItem("lastClickedButton");
-
-        if (lastClickedButtonSrc) {
-            let lastClickedButton = document.querySelector(`.btn-img img[src="${lastClickedButtonSrc}"]`);
-            
-            if (lastClickedButton) {
-                gsap.to(window, { duration: 1, scrollTo: lastClickedButton }); // Scroll fluide avec GSAP
-                sessionStorage.removeItem("lastClickedButton"); // Nettoyer après utilisation
-            }
+        // Récupérer la position de scroll sauvegardée
+        let scrollPosition = sessionStorage.getItem("scrollPosition");
+        if (scrollPosition) {
+            window.scrollTo({ top: scrollPosition, behavior: "smooth" });
+            sessionStorage.removeItem("scrollPosition");
         }
 
         console.log("✅ Tout est réaffiché normalement.");
@@ -466,7 +463,7 @@ if (window.innerWidth >= 1280) {
 });
 }
 
-/* Cache le reste du site tant que le formulaire n'est pas envoyer */
+/* Cache le reste du site tant que le formulaire n'est pas envoyé */
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.userForm');
     const hiddenElements = document.querySelectorAll('.hidden-submit');
@@ -499,11 +496,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (ticket) ticket.style.display = "none";
 
             // Cibler la phrase et faire défiler la page jusqu'à elle
-            if (!sessionStorage.getItem("lastClickedButton")) { // Vérifie qu'aucun bouton n'a été cliqué récemment
-                const welcomeMessage = document.querySelector(".title-small.animated-text-right.grid-start2.grid-end5");
-                if (welcomeMessage) {
-                    welcomeMessage.scrollIntoView({ behavior: "smooth", block: "center" });
-                }
+            const welcomeMessage = document.querySelector(".title-small.animated-text-right.grid-start2.grid-end5");
+            if (welcomeMessage) {
+                welcomeMessage.scrollIntoView({ behavior: "smooth", block: "center" });
             }
         } else {
             form.reportValidity(); // Affiche les messages de validation HTML5

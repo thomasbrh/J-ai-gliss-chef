@@ -16,6 +16,7 @@
 .hidden {
     display: none !important;
     visibility: hidden !important;
+    overflow-y: hidden !important; // Ajouté pour éviter l'overflow-y
 }
 
 /*empêche l'accès au site tant que le formulaire est pas rempli*/
@@ -237,4 +238,14 @@ img {
 .desktop {
     display: none;
     @include responsive(desktop) { display: grid; }
+}
+
+.content {
+    &.hidden {
+        overflow-y: hidden;
+    }
+}
+
+.content.hidden {
+    overflow-y: hidden !important;
 }
